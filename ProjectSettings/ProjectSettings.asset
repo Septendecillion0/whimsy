@@ -823,7 +823,8 @@ PlayerSettings:
   webGLCloseOnQuit: 0
   webWasm2023: 0
   webEnableSubmoduleStrippingCompatibility: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Standalone: INK_RUNTIME;INK_EDITOR
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
@@ -920,7 +921,7 @@ PlayerSettings:
   qnxGraphicConfPath: 
   apiCompatibilityLevel: 6
   captureStartupLogs: {}
-  activeInputHandler: 0
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
   cloudProjectId: dea82bef-17d1-4c6d-8a90-0b9d5d31977b
   framebufferDepthMemorylessMode: 0
