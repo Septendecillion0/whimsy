@@ -315,9 +315,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81aaf06a231be946a47608bb00a4185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraControls
-  sensitivity: 10
-  minFov: 10
-  maxFov: 170
+  zoomSpeed: 90
+  minFOV: 1
+  maxFOV: 10
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,7 +407,19 @@ MonoBehaviour:
     m_ActionId: d1f17e8c-c07e-49a2-8128-c35cb12a2403
     m_ActionName: 'Gameplay/Drag[/Mouse/leftButton]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 519420033}
+        m_TargetAssemblyTypeName: CameraControls, Assembly-CSharp
+        m_MethodName: OnZoom
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 8509bc56-2ed9-4aa3-a8b5-8783994dcc08
     m_ActionName: 'Gameplay/Zoom[/Mouse/scroll]'
   m_NeverAutoSwitchControlSchemes: 0

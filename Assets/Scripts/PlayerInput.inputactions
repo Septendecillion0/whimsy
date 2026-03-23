@@ -17,9 +17,9 @@
                 },
                 {
                     "name": "Zoom",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "8509bc56-2ed9-4aa3-a8b5-8783994dcc08",
-                    "expectedControlType": "",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true

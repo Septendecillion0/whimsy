@@ -11,9 +11,9 @@ public class CameraControls : MonoBehaviour
 
     private bool isDragging;
 
-    public float sensitivity = 10f;
-    public float minFov = 10f;
-    public float maxFov = 170f;
+    public float zoomSpeed = 10f;
+    public float minFOV = 10f;
+    public float maxFOV = 170f;
 
     private void Awake()
     {
@@ -21,6 +21,15 @@ public class CameraControls : MonoBehaviour
     }
 
 
+    public void OnZoom(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            float newSize = mainCamera.orthographicSize - context.ReadValue<Vector2>().y * zoomSpeed * Time.deltaTime;
+            mainCamera.orthographicSize = Mathf.Clamp(newSize, minFOV, maxFOV);
+
+        }
+    }
     public void OnDrag(InputAction.CallbackContext context)
     {
         if (context.started)
