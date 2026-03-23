@@ -20,20 +20,11 @@ public class CameraControls : MonoBehaviour
         mainCamera = Camera.main;
     }
 
-    private void Update()
-    {
-        float fov = mainCamera.fieldOfView;
-        fov += Input.GetAxis("Mouse ScrollWheel") * sensitivity;
-        fov = Mathf.Clamp(fov, minFov, maxFov);
-        mainCamera.fieldOfView = fov;
-    }
-
 
     public void OnDrag(InputAction.CallbackContext context)
     {
         if (context.started)
         {
-            Debug.Log("Drag started");
             origin = GetMousePosition();
         }
         isDragging = context.started || context.performed;
