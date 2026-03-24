@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class timer_slider : MonoBehaviour
+public class OLD_timer_slider : MonoBehaviour
 {
 
     private bool time_out = false;
@@ -28,7 +28,7 @@ public class timer_slider : MonoBehaviour
             else
             {
                 time_out = true;
-                TimerBarSlider.gameObject.SetActive(false);
+                //TimerBarSlider.gameObject.SetActive(false);
                 Debug.Log("Time is up!");
             }
         }

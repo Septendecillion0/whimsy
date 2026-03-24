@@ -1,15 +1,21 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
+
 
 public class vampire_encounter : MonoBehaviour
 {
 
 
     public GameObject target;
-    public GameObject dialogueBox;
+    public GameObject speechBubble;
     public GameObject dialogueContainer;
 
     private bool dialogueActive = false;
+
+    public bool talking = true;
+    public string conversation_state = "";
+    private speech_bubble currentDialogue;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,6 +28,10 @@ public class vampire_encounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (currentDialogue.time_out == true)
+        {
+            talking = false;
+        }
 
     }
 
@@ -41,14 +51,22 @@ public class vampire_encounter : MonoBehaviour
     {
         dialogueActive = true;
 
-        GameObject newDialogue = Instantiate(dialogueBox, dialogueContainer.transform);
-        //newDialogue.text = "Hello, I am the vampire. What do you want?";
-        newDialogue.transform.SetParent(dialogueContainer.transform);
+        GameObject newDialogue = Instantiate(speechBubble, dialogueContainer.transform);
 
+        newDialogue.transform.SetParent(dialogueContainer.transform);
+        speech_bubble dialogueScript = newDialogue.GetComponent<speech_bubble>();
+
+        currentDialogue = dialogueScript;
         dialogueActive = false;
 
 
         Debug.Log("Dialogue started!");
 
+    }
+
+    public void talk(string line)
+    {
+        talking = true;
+        StartVampireEncounter();
     }
 }

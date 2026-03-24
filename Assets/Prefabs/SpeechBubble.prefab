@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3651740572975335742}
+  - component: {fileID: 923926771005759921}
   m_Layer: 0
   m_Name: SpeechBubble
   m_TagString: Untagged
@@ -37,6 +38,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &923926771005759921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98574021858710428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3b1893878278c3428b48132aa38060b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  TimerBarSlider: {fileID: 2105591296561840782}
+  textMeshProUGUI: {fileID: 4778251301635557362}
+  MaxTime: 10
 --- !u!1 &883844830887886045
 GameObject:
   m_ObjectHideFlags: 0
@@ -47,7 +63,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3649332353164193706}
   - component: {fileID: 2105591296561840782}
-  - component: {fileID: 4847411699213524220}
   m_Layer: 0
   m_Name: Slider
   m_TagString: Untagged
@@ -127,20 +142,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4847411699213524220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 883844830887886045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3376bef0168e6647a655911b1aa0ebc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::timer_slider
-  TimerBarSlider: {fileID: 2105591296561840782}
-  MaxTime: 10
 --- !u!1 &1699811496008546799
 GameObject:
   m_ObjectHideFlags: 0
