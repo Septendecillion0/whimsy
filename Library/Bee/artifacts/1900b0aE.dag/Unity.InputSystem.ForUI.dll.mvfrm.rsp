@@ -1,4 +1,6 @@
 Library\Bee\artifacts\mvdfrm\Unity.InputSystem.ref.dll_FD2EC87C14EBE081.mvfrm
+Library\Bee\artifacts\mvdfrm\UnityEditor.UI.ref.dll_4C98D3F7040CD4F5.mvfrm
+Library\Bee\artifacts\mvdfrm\UnityEngine.UI.ref.dll_08FEAA520A2EFD60.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEditor.Graphs.dll_8A8F1CF508539D7A.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Scripting.dll_3AC7276990567CB9.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEditor.AccessibilityModule.dll_540D50D22050E459.mvfrm
@@ -137,3 +139,4 @@ Library\Bee\artifacts\mvdfrm\UnityEngine.WindModule.dll_5AF8AAE8102A44DC.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEngine.XRModule.dll_494720E45B65691E.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEngine.dll_CE2C6EA517E7F8B2.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEditor.WindowsStandalone.Extensions.dll_6814D2787087D2D8.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Collections.LowLevel.ILSupport.dll_480CD76956675265.mvfrm
