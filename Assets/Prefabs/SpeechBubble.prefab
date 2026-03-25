@@ -50,9 +50,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b1893878278c3428b48132aa38060b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  time_out: 0
   TimerBarSlider: {fileID: 2105591296561840782}
   textMeshProUGUI: {fileID: 4778251301635557362}
-  MaxTime: 10
+  MaxTime: 3
 --- !u!1 &883844830887886045
 GameObject:
   m_ObjectHideFlags: 0

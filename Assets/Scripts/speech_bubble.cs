@@ -31,6 +31,7 @@ public class speech_bubble : MonoBehaviour
             else
             {
                 time_out = true;
+                TimerBarSlider.gameObject.SetActive(false);
                 Debug.Log("Time is up!");
             }
         }
