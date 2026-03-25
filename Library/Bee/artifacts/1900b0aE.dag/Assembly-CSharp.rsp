@@ -457,10 +457,10 @@
 "Assets/Scripts/Pathfinding/VampirePathing.cs"
 "Assets/Scripts/SpawnManager.cs"
 "Assets/Scripts/VampireAttributes.cs"
+"Assets/Scripts/VampireDialogue.cs"
 "Assets/Scripts/conversation_controller.cs"
 "Assets/Scripts/speech_bubble.cs"
 "Assets/Scripts/timer_slider.cs"
-"Assets/Scripts/vampire_encounter.cs"
 -langversion:9.0
 /deterministic
 /optimize+

@@ -5,10 +5,10 @@ using Ink.Runtime;
 public class conversation_controller : MonoBehaviour
 {
 
-    public vampire_encounter person1;
-    public vampire_encounter person2;
+    public vampire_dialogue person1;
+    public vampire_dialogue person2;
     public bool conversation_started = false;
-    public vampire_encounter current_speaker = null;
+    public vampire_dialogue current_speaker = null;
     public string next_line = "";
     public string introKnot = "";
     public TextAsset ink_json;

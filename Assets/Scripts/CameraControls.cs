@@ -40,6 +40,25 @@ public class CameraControls : MonoBehaviour
 
     }
 
+    public void OnClick(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            RaycastHit2D hit = Physics2D.GetRayIntersection(mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
+            if (hit.collider != null)
+            {
+                if (hit.collider.gameObject.CompareTag("Vampire"))
+                {
+                    Debug.Log("Vampire clicked YUH");
+                    hit.collider.gameObject.SetActive(false);
+                }
+
+            }
+
+
+        }
+    }
+
     public void LateUpdate()
     {
         if (!isDragging)

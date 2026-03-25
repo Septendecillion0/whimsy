@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine.UI;
 
 
-public class vampire_encounter : MonoBehaviour
+public class vampire_dialogue : MonoBehaviour
 {
 
 
