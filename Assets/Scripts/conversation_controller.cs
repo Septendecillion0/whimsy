@@ -10,7 +10,7 @@ public class conversation_controller : MonoBehaviour
     public bool conversation_started = false;
     public vampire_encounter current_speaker = null;
     public string next_line = "";
-
+    public string introKnot = "";
     public TextAsset ink_json;
     Story ink_story;
 
@@ -26,7 +26,7 @@ public class conversation_controller : MonoBehaviour
 
     void Update()
     {
-        if (conversation_started)
+        if (conversation_started && ink_story.canContinue)
         {
             if (current_speaker == person1)
             {
@@ -64,11 +64,18 @@ public class conversation_controller : MonoBehaviour
 
     }
 
-    public void StartConversation()
+    public void StartConversation(string id)
     {
-        current_speaker = person1;
-        person1.talk(next_line);
-        conversation_started = true;
+        ink_story.ChoosePathString(id);
+
+        if (ink_story.canContinue)
+        {
+            current_speaker = person1;
+            next_line = ink_story.Continue();
+            person1.talk(next_line);
+            conversation_started = true;
+        }
+
     }
 
     public void OnSpace(InputAction.CallbackContext context)
@@ -76,7 +83,12 @@ public class conversation_controller : MonoBehaviour
         if (context.started && conversation_started == false)
         {
             Debug.Log("Starting conversation");
-            StartConversation();
+            if (introKnot != "")
+            {
+                Debug.Log(introKnot);
+                StartConversation(introKnot);
+            }
+
         }
     }
 

@@ -15,6 +15,8 @@ public class speech_bubble : MonoBehaviour
     {
         timeLeft = MaxTime;
         TimerBarSlider.maxValue = MaxTime;
+
+        textMeshProUGUI.color = Color.white;
     }
 
     // Update is called once per frame
@@ -31,6 +33,7 @@ public class speech_bubble : MonoBehaviour
             {
                 time_out = true;
                 TimerBarSlider.gameObject.SetActive(false);
+                textMeshProUGUI.color = Color.gray;
                 Debug.Log("Time is up!");
             }
         }
