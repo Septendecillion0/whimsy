@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 3374799675915480216}
   - component: {fileID: 292416231212605553}
   - component: {fileID: 5816960428583221075}
+  - component: {fileID: 7634578938889340375}
+  - component: {fileID: 3018661262567887863}
+  - component: {fileID: 5683198329147613685}
   m_Layer: 0
   m_Name: VampPlaceholder
   m_TagString: Untagged
@@ -27,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1462522432570561770}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.02, y: -1.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -165,6 +168,53 @@ MonoBehaviour:
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &7634578938889340375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462522432570561770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7ffc826fb6315343ae4d436a692c108, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VampirePathing
+  path: {fileID: 0}
+  startCheckpoint: {fileID: 0}
+  destinationCheckpoint: {fileID: 0}
+  speed: 3
+  arriveDistance: 0.05
+--- !u!114 &3018661262567887863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462522432570561770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15203c4edd5c89a4daaf53d09392065b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DELETEpathingtestscript
+  pathing: {fileID: 7634578938889340375}
+  attributes: {fileID: 5683198329147613685}
+  nextDestination: {fileID: 0}
+--- !u!114 &5683198329147613685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462522432570561770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dd62dc256ac7f842b7f2f4956207a91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VampireAttributes
+  validWarrant: 1
+  somethingAttempted: 0
+  speed: 3
 --- !u!1 &3625428703562430137
 GameObject:
   m_ObjectHideFlags: 0
