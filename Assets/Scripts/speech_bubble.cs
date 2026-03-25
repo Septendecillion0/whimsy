@@ -15,7 +15,6 @@ public class speech_bubble : MonoBehaviour
     {
         timeLeft = MaxTime;
         TimerBarSlider.maxValue = MaxTime;
-        SetText("Hello. What do you want?");
     }
 
     // Update is called once per frame

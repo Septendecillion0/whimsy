@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Ink.Runtime;
 
 public class conversation_controller : MonoBehaviour
 {
@@ -8,8 +9,20 @@ public class conversation_controller : MonoBehaviour
     public vampire_encounter person2;
     public bool conversation_started = false;
     public vampire_encounter current_speaker = null;
-    public string next_line = "Next Line";
+    public string next_line = "";
 
+    public TextAsset ink_json;
+    Story ink_story;
+
+
+    void Awake()
+    {
+        ink_story = new Story(ink_json.text);
+        if (ink_story.canContinue)
+        {
+            next_line = ink_story.Continue();
+        }
+    }
 
     void Update()
     {
@@ -24,6 +37,10 @@ public class conversation_controller : MonoBehaviour
                 else
                 {
                     current_speaker = person2;
+                    if (ink_story.canContinue)
+                    {
+                        next_line = ink_story.Continue();
+                    }
                     person2.talk(next_line);
                 }
             }
@@ -36,6 +53,10 @@ public class conversation_controller : MonoBehaviour
                 else
                 {
                     current_speaker = person1;
+                    if (ink_story.canContinue)
+                    {
+                        next_line = ink_story.Continue();
+                    }
                     person1.talk(next_line);
                 }
             }
