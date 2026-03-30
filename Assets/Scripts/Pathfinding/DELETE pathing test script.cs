@@ -18,11 +18,11 @@ public class DELETEpathingtestscript : MonoBehaviour
 
     void HandleDestinationReached(VampirePathing vampire)
     {
-        Debug.Log("Test script triggered!");
+        //Debug.Log("Test script triggered!");
 
         // Modify attribute
         attributes.somethingAttempted = true;
-        Debug.Log("attempted to do something");
+        //Debug.Log("attempted to do something");
 
         // Start delayed action
         //StartCoroutine(WaitAndRedirect());
@@ -32,7 +32,7 @@ public class DELETEpathingtestscript : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
 
-        Debug.Log("Redirecting to new destination...");
+        //Debug.Log("Redirecting to new destination...");
 
         pathing.SetNewDestination(nextDestination);
     }

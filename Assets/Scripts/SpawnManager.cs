@@ -86,7 +86,7 @@ public class SpawnManager : MonoBehaviour
         // Randomly assign warrant
         attributes.validWarrant = Random.value > 0.5f;
 
-        Debug.Log($"Spawned {enemy.name} | Cool: {attributes.validWarrant}");
+        //Debug.Log($"Spawned {enemy.name} | Cool: {attributes.validWarrant}");
     }
 
     // helper for random Checkpoint decisions

@@ -4,6 +4,7 @@ public class landmark : MonoBehaviour
 {
 
     public GameObject dialogueScene;
+    public GameObject resident;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,6 +19,6 @@ public class landmark : MonoBehaviour
 
     public void zoomIn()
     {
-        dialogueScene.SetActive(true);
+        dialogueScene.GetComponent<porch_scene>().MakeVisible();
     }
 }
