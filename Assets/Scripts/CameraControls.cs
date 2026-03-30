@@ -49,8 +49,11 @@ public class CameraControls : MonoBehaviour
             {
                 if (hit.collider.gameObject.CompareTag("Vampire"))
                 {
-                    Debug.Log("Vampire clicked YUH");
-                    hit.collider.gameObject.SetActive(false);
+                    if (hit.collider)
+                    {
+                        Debug.Log("Vampire clicked");
+                        hit.collider.gameObject.SetActive(false);
+                    }
                 }
 
             }

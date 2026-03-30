@@ -24,6 +24,12 @@ public class conversation_controller : MonoBehaviour
         }
     }
 
+    public void set_speakers(GameObject speaker1, GameObject speaker2)
+    {
+        person1 = speaker1.GetComponent<vampire_dialogue>();
+        person2 = speaker2.GetComponent<vampire_dialogue>();
+    }
+
     void Update()
     {
         if (conversation_started && ink_story.canContinue)
@@ -64,8 +70,13 @@ public class conversation_controller : MonoBehaviour
 
     }
 
-    public void StartConversation(string id)
+    public void StartConversation(string id = "")
     {
+        if (id == "")
+        {
+            id = introKnot;
+        }
+
         ink_story.ChoosePathString(id);
 
         if (ink_story.canContinue)
@@ -80,16 +91,16 @@ public class conversation_controller : MonoBehaviour
 
     public void OnSpace(InputAction.CallbackContext context)
     {
-        if (context.started && conversation_started == false)
-        {
-            Debug.Log("Starting conversation");
-            if (introKnot != "")
-            {
-                Debug.Log(introKnot);
-                StartConversation(introKnot);
-            }
+        // if (context.started && conversation_started == false)
+        // {
+        //     Debug.Log("Starting conversation");
+        //     if (introKnot != "")
+        //     {
+        //         Debug.Log(introKnot);
+        //         StartConversation(introKnot);
+        //     }
 
-        }
+        // }
     }
 
 }

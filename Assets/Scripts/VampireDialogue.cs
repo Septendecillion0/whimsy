@@ -9,19 +9,27 @@ public class vampire_dialogue : MonoBehaviour
 
 
     public GameObject target;
+    public conversation_controller conversation_prefab;
     public GameObject speechBubble;
     public GameObject dialogueContainer;
+
+    public VampirePathing pathing;
+
 
     public bool talking = true;
     public string conversation_state = "";
     private speech_bubble currentDialogueScript;
 
 
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //set target to random villager here
-
+        if (pathing != null)
+        {
+            pathing.OnDestinationReached += StartNewConversation;
+        }
     }
 
     // Update is called once per frame
@@ -39,6 +47,18 @@ public class vampire_dialogue : MonoBehaviour
             }
         }
 
+    }
+
+    void StartNewConversation(VampirePathing pathResource)
+    {
+        if (target != null)
+        {
+            Debug.Log("Starting new conversation with " + target.name);
+            conversation_controller conversation = Instantiate(conversation_prefab);
+            conversation.set_speakers(gameObject, target);
+            conversation.StartConversation();
+
+        }
     }
 
 

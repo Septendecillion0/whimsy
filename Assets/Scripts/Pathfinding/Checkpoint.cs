@@ -6,8 +6,11 @@ using System.Collections.Generic;
 /// A Checkpoint is a node of the Path tree, which is used for enemy(vampire) pathfinding through the map
 /// only holds information about its location and neighbors
 /// </summary>
+/// 
 public class Checkpoint : MonoBehaviour
 {
+
+    public GameObject resident;
     public List<Checkpoint> neighbors = new List<Checkpoint>();
     // Use OnValidate to automatically create the backwards-facing connection when adding connections
     // note: does not automatically remove backwards-facing connections when removing

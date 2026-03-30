@@ -33,8 +33,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.02, y: -1.45, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: -0.3, y: 0.3, z: 0.3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8047056839574490950}
   m_Father: {fileID: 0}
@@ -111,8 +111,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   target: {fileID: 0}
+  conversation_prefab: {fileID: 5517649606754377508, guid: 589249246b103874d8c4fd73f20f8d77, type: 3}
   speechBubble: {fileID: 98574021858710428, guid: e6474eea2014dbf468d85133a978fffd, type: 3}
   dialogueContainer: {fileID: 3625428703562430137}
+  pathing: {fileID: 7634578938889340375}
   talking: 1
   conversation_state: 
 --- !u!114 &5816960428583221075
@@ -424,7 +426,7 @@ RectTransform:
   m_GameObject: {fileID: 3625428703562430137}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8047056839574490950}

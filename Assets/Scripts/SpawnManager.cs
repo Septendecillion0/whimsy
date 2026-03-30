@@ -54,6 +54,7 @@ public class SpawnManager : MonoBehaviour
         // Get components
         VampirePathing pathing = enemy.GetComponent<VampirePathing>();
         VampireAttributes attributes = enemy.GetComponent<VampireAttributes>();
+        vampire_dialogue dialogue = enemy.GetComponent<vampire_dialogue>();
         DELETEpathingtestscript testScript = enemy.GetComponent<DELETEpathingtestscript>();
 
         if (pathing == null || attributes == null)
@@ -65,7 +66,11 @@ public class SpawnManager : MonoBehaviour
         // Pick random checkpoints
         Checkpoint start = GetRandomCheckpoint(spawnPoints);
         Checkpoint destination = GetRandomCheckpoint(destinationPoints);
+        destinationPoints.Remove(destination);
+        dialogue.target = destination.resident; // set the vampire's target to the resident at their destination
         Checkpoint exit = GetRandomCheckpoint(exitPoints);
+
+
 
         // Assign pathing
         pathing.path = path;

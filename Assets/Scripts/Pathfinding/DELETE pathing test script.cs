@@ -25,7 +25,7 @@ public class DELETEpathingtestscript : MonoBehaviour
         Debug.Log("attempted to do something");
 
         // Start delayed action
-        StartCoroutine(WaitAndRedirect());
+        //StartCoroutine(WaitAndRedirect());
     }
 
     IEnumerator WaitAndRedirect()

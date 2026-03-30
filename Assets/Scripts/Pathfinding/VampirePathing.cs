@@ -17,6 +17,7 @@ public class VampirePathing : MonoBehaviour
     public Checkpoint startCheckpoint;
     public Checkpoint destinationCheckpoint;
 
+
     public float speed = 3f;
     public float arriveDistance = 0.05f; // buffer distance between vampire and destination
 
@@ -29,7 +30,7 @@ public class VampirePathing : MonoBehaviour
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
-    {   
+    {
         if (path == null || startCheckpoint == null || destinationCheckpoint == null)
         {
             Debug.LogError("VampirePathing is missing references!");
@@ -113,6 +114,7 @@ public class VampirePathing : MonoBehaviour
         destinationCheckpoint = newDestination;
         reachedDestination = false;
 
+
         targetCheckpoint = path.FindConnection(currentCheckpoint, destinationCheckpoint);
 
         if (targetCheckpoint == null)
@@ -120,5 +122,7 @@ public class VampirePathing : MonoBehaviour
             Debug.LogError("No path to new destination!");
             reachedDestination = true;
         }
+
+
     }
 }
