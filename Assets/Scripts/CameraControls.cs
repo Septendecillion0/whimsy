@@ -55,6 +55,14 @@ public class CameraControls : MonoBehaviour
                         hit.collider.gameObject.SetActive(false);
                     }
                 }
+                if (hit.collider.gameObject.CompareTag("Landmark"))
+                {
+                    Debug.Log("Landmark clicked");
+                    if (hit.collider)
+                    {
+                        hit.collider.gameObject.GetComponent<landmark>().zoomIn();
+                    }
+                }
 
             }
 
