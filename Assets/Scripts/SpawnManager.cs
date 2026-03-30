@@ -67,7 +67,7 @@ public class SpawnManager : MonoBehaviour
         Checkpoint start = GetRandomCheckpoint(spawnPoints);
         Checkpoint destination = GetRandomCheckpoint(destinationPoints);
         destinationPoints.Remove(destination);
-        dialogue.target = destination.resident; // set the vampire's target to the resident at their destination
+        //dialogue.target = destination.resident; // set the vampire's target to the resident at their destination
         Checkpoint exit = GetRandomCheckpoint(exitPoints);
 
 
