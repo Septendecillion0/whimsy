@@ -91,16 +91,16 @@ public class conversation_controller : MonoBehaviour
 
     public void OnSpace(InputAction.CallbackContext context)
     {
-        // if (context.started && conversation_started == false)
-        // {
-        //     Debug.Log("Starting conversation");
-        //     if (introKnot != "")
-        //     {
-        //         Debug.Log(introKnot);
-        //         StartConversation(introKnot);
-        //     }
+        if (context.started && conversation_started == false)
+        {
+            Debug.Log("Starting conversation");
+            if (introKnot != "")
+            {
+                Debug.Log(introKnot);
+                StartConversation(introKnot);
+            }
 
-        // }
+        }
     }
 
 }
