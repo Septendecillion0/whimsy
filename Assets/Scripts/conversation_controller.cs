@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Ink.Runtime;
+using System.Collections.Generic;
 
 public class conversation_controller : MonoBehaviour
 {
@@ -34,38 +35,63 @@ public class conversation_controller : MonoBehaviour
     {
         if (conversation_started && ink_story.canContinue)
         {
-            if (current_speaker == person1)
+
+            next_line = ink_story.Continue();
+            List<string> tags = ink_story.currentTags;
+
+            if (current_speaker.talking == false)
             {
-                if (person1.talking == true)
-                {
-                    Debug.Log("Person 1 is talking");
-                }
-                else
-                {
-                    current_speaker = person2;
-                    if (ink_story.canContinue)
-                    {
-                        next_line = ink_story.Continue();
-                    }
-                    person2.talk(next_line);
-                }
-            }
-            else if (current_speaker == person2)
-            {
-                if (person2.talking == true)
-                {
-                    Debug.Log("Person 2 is talking");
-                }
-                else
+                if (tags.Contains("VAMPIRE"))
                 {
                     current_speaker = person1;
-                    if (ink_story.canContinue)
-                    {
-                        next_line = ink_story.Continue();
-                    }
-                    person1.talk(next_line);
+                    current_speaker.talk(next_line);
+                }
+                if (tags.Contains("VILLAGER"))
+                {
+                    current_speaker = person2;
+                    current_speaker.talk(next_line);
                 }
             }
+
+            else
+            {
+                Debug.Log(current_speaker.ToString() + "is talking.");
+            }
+
+
+
+            // if (current_speaker == person1)
+            // {
+            //     if (person1.talking == true)
+            //     {
+            //         Debug.Log("Person 1 is talking");
+            //     }
+            //     else
+            //     {
+            //         current_speaker = person2;
+            //         if (ink_story.canContinue)
+            //         {
+            //             next_line = ink_story.Continue();
+            //         }
+            //         person2.talk(next_line);
+            //     }
+            // }
+            // else if (current_speaker == person2)
+            // {
+            //     if (person2.talking == true)
+            //     {
+            //         Debug.Log("Person 2 is talking");
+            //     }
+            //     else
+            //     {
+            //         current_speaker = person1;
+            //         if (ink_story.canContinue)
+            //         {
+            //             next_line = ink_story.Continue();
+            //         }
+            //         person1.talk(next_line);
+            //     }
+            // }
         }
 
     }
@@ -81,9 +107,17 @@ public class conversation_controller : MonoBehaviour
 
         if (ink_story.canContinue)
         {
-            current_speaker = person1;
             next_line = ink_story.Continue();
-            person1.talk(next_line);
+            List<string> tags = ink_story.currentTags;
+            if (tags.Contains("VAMPIRE"))
+            {
+                current_speaker = person1;
+            }
+            if (tags.Contains("VILLAGER"))
+            {
+                current_speaker = person2;
+            }
+            current_speaker.talk(next_line);
             conversation_started = true;
         }
 
