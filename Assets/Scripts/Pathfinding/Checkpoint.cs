@@ -10,7 +10,7 @@ using System.Collections.Generic;
 public class Checkpoint : MonoBehaviour
 {
 
-    public GameObject resident;
+    public GameObject landmarkScene;
     public List<Checkpoint> neighbors = new List<Checkpoint>();
     // Use OnValidate to automatically create the backwards-facing connection when adding connections
     // note: does not automatically remove backwards-facing connections when removing

@@ -98,9 +98,10 @@ public class VampirePathing : MonoBehaviour
 
     void OnReachedDestination()
     {
-        Debug.Log($"{gameObject.name} reached destination!");
+        //Debug.Log($"{gameObject.name} reached destination!");
 
         OnDestinationReached?.Invoke(this);
+        currentCheckpoint.landmarkScene.GetComponent<landmark>().StartEvent();
     }
 
     public void SetNewDestination(Checkpoint newDestination)

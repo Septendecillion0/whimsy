@@ -67,7 +67,7 @@ public class SpawnManager : MonoBehaviour
         Checkpoint start = GetRandomCheckpoint(spawnPoints);
         Checkpoint destination = GetRandomCheckpoint(destinationPoints);
         destinationPoints.Remove(destination);
-        dialogue.target = destination.resident; // set the vampire's target to the resident at their destination
+        //dialogue.target = destination.resident; // set the vampire's target to the resident at their destination
         Checkpoint exit = GetRandomCheckpoint(exitPoints);
 
 
@@ -86,7 +86,7 @@ public class SpawnManager : MonoBehaviour
         // Randomly assign warrant
         attributes.validWarrant = Random.value > 0.5f;
 
-        Debug.Log($"Spawned {enemy.name} | Cool: {attributes.validWarrant}");
+        //Debug.Log($"Spawned {enemy.name} | Cool: {attributes.validWarrant}");
     }
 
     // helper for random Checkpoint decisions

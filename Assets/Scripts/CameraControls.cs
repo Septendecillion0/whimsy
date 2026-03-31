@@ -23,12 +23,12 @@ public class CameraControls : MonoBehaviour
 
     public void OnZoom(InputAction.CallbackContext context)
     {
-        if (context.started)
-        {
-            float newSize = mainCamera.orthographicSize - context.ReadValue<Vector2>().y * zoomSpeed * Time.deltaTime;
-            mainCamera.orthographicSize = Mathf.Clamp(newSize, minFOV, maxFOV);
+        // if (context.started)
+        // {
+        //     float newSize = mainCamera.orthographicSize - context.ReadValue<Vector2>().y * zoomSpeed * Time.deltaTime;
+        //     mainCamera.orthographicSize = Mathf.Clamp(newSize, minFOV, maxFOV);
 
-        }
+        // }
     }
     public void OnDrag(InputAction.CallbackContext context)
     {
@@ -47,20 +47,24 @@ public class CameraControls : MonoBehaviour
             RaycastHit2D hit = Physics2D.GetRayIntersection(mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
             if (hit.collider != null)
             {
-                if (hit.collider.gameObject.CompareTag("Vampire"))
-                {
-                    if (hit.collider)
-                    {
-                        Debug.Log("Vampire clicked");
-                        hit.collider.gameObject.SetActive(false);
-                    }
-                }
+                // if (hit.collider.gameObject.CompareTag("Vampire"))
+                // {
+                //     if (hit.collider)
+                //     {
+                //         Debug.Log("Vampire clicked");
+                //         hit.collider.gameObject.SetActive(false);
+                //     }
+                // }
                 if (hit.collider.gameObject.CompareTag("Landmark"))
                 {
                     Debug.Log("Landmark clicked");
                     if (hit.collider)
                     {
-                        hit.collider.gameObject.GetComponent<landmark>().zoomIn();
+                        landmark landmark = hit.collider.gameObject.GetComponent<landmark>();
+                        if (landmark.eventActive)
+                        {
+                            landmark.zoomIn();
+                        }
                     }
                 }
 
