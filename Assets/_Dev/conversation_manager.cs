@@ -18,8 +18,14 @@ public class conversation_manager : MonoBehaviour
 
     }
 
+    public void OnSpace()
+    {
+        createConversation();
+    }
+
     public void createConversation()
     {
-        new_conversation = Instantiate(conversation_prefab);
+        Debug.Log("Conversation created");
+        GameObject new_conversation = Instantiate(conversation_prefab);
     }
 }

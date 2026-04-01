@@ -19,18 +19,18 @@ public class landmark : Checkpoint
 
     public void StartEvent()
     {
-        warningSymbol.SetActive(true);
+        //warningSymbol.SetActive(true);
         eventActive = true;
     }
 
     public void EndEvent()
     {
-        warningSymbol.SetActive(false);
+        //warningSymbol.SetActive(false);
         eventActive = false;
     }
 
     public void zoomIn()
     {
-        dialogueScene.GetComponent<porch_scene>().MakeVisible();
+        //dialogueScene.GetComponent<porch_scene>().MakeVisible();
     }
 }
