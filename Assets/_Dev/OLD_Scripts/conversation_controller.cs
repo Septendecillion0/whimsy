@@ -36,11 +36,18 @@ public class conversation_controller : MonoBehaviour
         if (conversation_started && ink_story.canContinue)
         {
 
-            next_line = ink_story.Continue();
-            List<string> tags = ink_story.currentTags;
-
             if (current_speaker.talking == false)
             {
+                next_line = ink_story.Continue();
+                List<string> tags = ink_story.currentTags;
+
+
+                if (tags.Contains("FAKE_WARRANT"))
+                {
+                    Debug.Log("FAKE WARRANT");
+                }
+
+
                 if (tags.Contains("VAMPIRE"))
                 {
                     current_speaker = person1;
