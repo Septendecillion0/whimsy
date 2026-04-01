@@ -3,7 +3,20 @@ using TMPro;
 
 public class PorchSceneUI : MonoBehaviour
 {
+    public static PorchSceneUI Instance;
     private Conversation current_conversation;
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject); // Prevent duplicate managers
+        }
+    }
 
     void OnEnable()
     {
