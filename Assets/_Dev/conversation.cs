@@ -33,7 +33,14 @@ public class Conversation : MonoBehaviour
         {
             StartCoroutine(DialogueDelay(3.0f));
             Debug.Log(next_line);
-            next_line = ink_story.Continue();
+            if (ink_story.canContinue)
+            {
+                next_line = ink_story.Continue();
+            }
+            else
+            {
+                conversation_started = false;
+            }
 
         }
         // if (conversation_started && ink_story.canContinue)
