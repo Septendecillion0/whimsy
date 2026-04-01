@@ -27,10 +27,19 @@ public class conversation_manager : MonoBehaviour
         }
     }
 
-    public void createConversation()
+    public void createConversation(Landmark landmark)
     {
         Debug.Log("Conversation created");
         GameObject new_conversation = Instantiate(conversation_prefab);
         new_conversation.transform.SetParent(transform, false);
+        new_conversation.landmark = landmark;
+        new_conversation.vampire = landmark.vampire;
+        new_conversation.villager = landmark.resident;
+        landmark.setConversation(new_conversation);
+    }
+
+    public void setSelectedConversation(GameObject conversation)
+    {
+        selected_conversation = conversation;
     }
 }
