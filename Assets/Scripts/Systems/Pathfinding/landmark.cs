@@ -1,11 +1,8 @@
 using UnityEngine;
 
-public class landmark : MonoBehaviour
+public class landmark : Checkpoint
 {
-
-    public GameObject dialogueScene;
     public GameObject resident;
-    public GameObject warningSymbol;
 
     public bool eventActive = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
