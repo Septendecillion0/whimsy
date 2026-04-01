@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class conversation_manager : MonoBehaviour
 {
@@ -18,14 +19,18 @@ public class conversation_manager : MonoBehaviour
 
     }
 
-    public void OnSpace()
+    public void OnSpace(InputAction.CallbackContext context)
     {
-        createConversation();
+        if (context.started)
+        {
+            createConversation();
+        }
     }
 
     public void createConversation()
     {
         Debug.Log("Conversation created");
         GameObject new_conversation = Instantiate(conversation_prefab);
+        new_conversation.transform.SetParent(transform, false);
     }
 }
