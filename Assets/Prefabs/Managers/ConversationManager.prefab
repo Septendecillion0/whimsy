@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2447222528032156136
+--- !u!1 &2606202147810482831
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2173408450024950617}
-  - component: {fileID: 4921079109820101096}
-  - component: {fileID: 3644353708960306942}
+  - component: {fileID: 7494507759067313364}
+  - component: {fileID: 1581438173412154224}
+  - component: {fileID: 3902060637036596861}
   m_Layer: 0
   m_Name: ConversationManager
   m_TagString: Untagged
@@ -18,42 +18,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2173408450024950617
+--- !u!4 &7494507759067313364
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2447222528032156136}
+  m_GameObject: {fileID: 2606202147810482831}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 901.37384, y: 474.72083, z: 0}
+  m_LocalPosition: {x: 0.51455, y: -0.13864, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4921079109820101096
+--- !u!114 &1581438173412154224
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2447222528032156136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da67292057ffc0e46a61bd17c7582cf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  conversation_prefab: {fileID: 4255422446336957742, guid: 717b2e320903d1c4fa7f1f1666416577, type: 3}
-  selected_conversation: {fileID: 0}
---- !u!114 &3644353708960306942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2447222528032156136}
+  m_GameObject: {fileID: 2606202147810482831}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
@@ -82,7 +68,7 @@ MonoBehaviour:
     m_ActionName: 'Gameplay/Zoom[/Mouse/scroll]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4921079109820101096}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: conversation_manager, Assembly-CSharp
         m_MethodName: OnSpace
         m_Mode: 0
@@ -105,3 +91,17 @@ MonoBehaviour:
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &3902060637036596861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2606202147810482831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05bc95f6e6308fc4ba44b17a08416858, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ConversationManager
+  conversation_prefab: {fileID: 4255422446336957742, guid: 717b2e320903d1c4fa7f1f1666416577, type: 3}
+  selected_conversation: {fileID: 0}
