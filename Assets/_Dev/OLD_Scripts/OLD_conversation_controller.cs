@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 using Ink.Runtime;
 using System.Collections.Generic;
 
-public class conversation_controller : MonoBehaviour
+public class OLD_conversationManager : MonoBehaviour
 {
 
     public vampire_dialogue person1;

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class conversation_manager : MonoBehaviour
+public class ConversationManager : MonoBehaviour
 {
 
     public GameObject conversation_prefab;
@@ -27,7 +27,7 @@ public class conversation_manager : MonoBehaviour
         }
     }
 
-    public void createConversation(Landmark landmark)
+    public void CreateConversation(Landmark landmark)
     {
         Debug.Log("Conversation created");
         GameObject new_conversation = Instantiate(conversation_prefab);
@@ -38,7 +38,7 @@ public class conversation_manager : MonoBehaviour
         landmark.setConversation(new_conversation);
     }
 
-    public void setSelectedConversation(GameObject conversation)
+    public void SetSelectedConversation(GameObject conversation)
     {
         selected_conversation = conversation;
     }

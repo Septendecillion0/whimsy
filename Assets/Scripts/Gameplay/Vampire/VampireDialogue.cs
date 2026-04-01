@@ -9,7 +9,7 @@ public class vampire_dialogue : MonoBehaviour
 
 
     public GameObject target;
-    public conversation_controller conversation_prefab;
+    public OLD_conversationManager conversation_prefab;
     public GameObject speechBubble;
     public GameObject dialogueContainer;
 
