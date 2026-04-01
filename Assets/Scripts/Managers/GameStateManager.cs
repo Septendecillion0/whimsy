@@ -11,6 +11,18 @@ public class GameStateManager : MonoBehaviour
 
     public GameState currentState;
 
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject); // Prevent duplicate managers
+        }
+    }
+
     public void SetState(GameState state)
     {
         currentState = state;

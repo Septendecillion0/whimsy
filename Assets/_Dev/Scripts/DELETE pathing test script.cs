@@ -3,37 +3,37 @@ using UnityEngine;
 
 public class DELETEpathingtestscript : MonoBehaviour
 {
-    public VampirePathing pathing;
-    public VampireAttributes attributes;
+    // public VampirePathing pathing;
+    // public VampireAttributes attributes;
 
-    public Checkpoint nextDestination;
+    // public Checkpoint nextDestination;
 
-    void Start()
-    {
-        if (pathing != null)
-        {
-            pathing.OnDestinationReached += HandleDestinationReached;
-        }
-    }
+    // void Start()
+    // {
+    //     if (pathing != null)
+    //     {
+    //         pathing.OnDestinationReached += HandleDestinationReached;
+    //     }
+    // }
 
-    void HandleDestinationReached(VampirePathing vampire)
-    {
-        //Debug.Log("Test script triggered!");
+    // void HandleDestinationReached(VampirePathing vampire)
+    // {
+    //     //Debug.Log("Test script triggered!");
 
-        // Modify attribute
-        attributes.somethingAttempted = true;
-        //Debug.Log("attempted to do something");
+    //     // Modify attribute
+    //     attributes.somethingAttempted = true;
+    //     //Debug.Log("attempted to do something");
 
-        // Start delayed action
-        //StartCoroutine(WaitAndRedirect());
-    }
+    //     // Start delayed action
+    //     //StartCoroutine(WaitAndRedirect());
+    // }
 
-    IEnumerator WaitAndRedirect()
-    {
-        yield return new WaitForSeconds(5f);
+    // IEnumerator WaitAndRedirect()
+    // {
+    //     yield return new WaitForSeconds(5f);
 
-        //Debug.Log("Redirecting to new destination...");
+    //     //Debug.Log("Redirecting to new destination...");
 
-        pathing.SetNewDestination(nextDestination);
-    }
+    //     pathing.SetNewDestination(nextDestination);
+    // }
 }
