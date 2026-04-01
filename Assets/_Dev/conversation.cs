@@ -29,7 +29,7 @@ public class Conversation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (conversation_started && !delay_cooldown) //&& ink_story.canContinue)
+        if (conversation_started && !delay_cooldown)
         {
             StartCoroutine(DialogueDelay(3.0f));
             Debug.Log(next_line);
@@ -41,13 +41,7 @@ public class Conversation : MonoBehaviour
             {
                 conversation_started = false;
             }
-
         }
-        // if (conversation_started && ink_story.canContinue)
-        // {
-
-
-        // }
     }
 
     public void StartConversation()
@@ -56,13 +50,16 @@ public class Conversation : MonoBehaviour
         Debug.Log("Conversation started");
     }
 
+    public void OnConversationEnd()
+    {
+        // TODO: Add logic to send vampire to next landmark
+    }
+
 
     IEnumerator DialogueDelay(float delay)
     {
         delay_cooldown = true;
-        Debug.Log("Waiting started...");
         yield return new WaitForSeconds(delay);
-        Debug.Log(delay + " seconds have passed!");
         delay_cooldown = false;
     }
 }

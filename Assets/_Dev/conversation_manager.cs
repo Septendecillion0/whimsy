@@ -13,10 +13,16 @@ public class ConversationManager : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
+    void Awake()
     {
-
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject); // Prevent duplicate managers
+        }
     }
 
     public void CreateConversation(Landmark landmark)
@@ -31,8 +37,22 @@ public class ConversationManager : MonoBehaviour
         landmark.SetConversation(new_conversation);
     }
 
+    public void TEST_CreateConversationInTestScene()
+    {
+        Debug.Log("Conversation created");
+        GameObject new_conversation_prefab = Instantiate(conversation_prefab);
+        Conversation new_conversation = new_conversation_prefab.GetComponent<Conversation>();
+        new_conversation.transform.SetParent(transform, false);
+        selected_conversation = new_conversation_prefab;
+    }
+
+    public GameObject GetSelectedConversation()
+    {
+        return selected_conversation;
+    }
     public void SetSelectedConversation(GameObject conversation)
     {
         selected_conversation = conversation;
     }
+
 }
