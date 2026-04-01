@@ -21,8 +21,6 @@ public class VampirePathing : MonoBehaviour
     public float speed = 3f;
     public float arriveDistance = 0.05f; // buffer distance between vampire and destination
 
-    public Action<VampirePathing> OnDestinationReached; // event to be called when destination is reached
-
     private Checkpoint currentCheckpoint;
     private Checkpoint targetCheckpoint;
 
@@ -88,40 +86,24 @@ public class VampirePathing : MonoBehaviour
         }
 
         targetCheckpoint = path.FindConnection(currentCheckpoint, destinationCheckpoint);
-
-        if (targetCheckpoint == null)
-        {
-            Debug.LogError("Path broke mid-navigation!");
-            reachedDestination = true;
-        }
     }
 
     void OnReachedDestination()
     {
-        //Debug.Log($"{gameObject.name} reached destination!");
+        Landmark currentLandmark = currentCheckpoint.GetComponent<Landmark>();
 
-        OnDestinationReached?.Invoke(this);
-        ConversationManager.Instance.CreateConversation(currentCheckpoint.GetComponent<Landmark>());
+        currentLandmark.vampire = gameObject.GetComponent<VampireAttributes>();
+        Debug.Log("Instance: " + ConversationManager.Instance);
+        Debug.Log("Landmark: " + currentLandmark);
+        ConversationManager.Instance.CreateConversation(currentLandmark);
+        
     }
 
     public void SetNewDestination(Checkpoint newDestination)
     {
-        if (newDestination == null)
-        {
-            Debug.LogError("New destination is null!");
-            return;
-        }
-
         destinationCheckpoint = newDestination;
         reachedDestination = false;
 
-
         targetCheckpoint = path.FindConnection(currentCheckpoint, destinationCheckpoint);
-
-        if (targetCheckpoint == null)
-        {
-            Debug.LogError("No path to new destination!");
-            reachedDestination = true;
-        }
     }
 }

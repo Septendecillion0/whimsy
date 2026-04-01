@@ -39,12 +39,6 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnEnemy()
     {
-        if (enemyPrefabs.Count == 0)
-        {
-            Debug.LogError("No enemy prefabs assigned!");
-            return;
-        }
-
         // Pick random enemy prefab
         GameObject prefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
 
@@ -55,50 +49,41 @@ public class SpawnManager : MonoBehaviour
         VampirePathing pathing = enemy.GetComponent<VampirePathing>();
         VampireAttributes attributes = enemy.GetComponent<VampireAttributes>();
         vampire_dialogue dialogue = enemy.GetComponent<vampire_dialogue>();
-        DELETEpathingtestscript testScript = enemy.GetComponent<DELETEpathingtestscript>();
-
-        if (pathing == null || attributes == null)
-        {
-            Debug.LogError("Enemy prefab missing required components!");
-            return;
-        }
 
         // Pick random checkpoints
         Checkpoint start = GetRandomCheckpoint(spawnPoints);
         Checkpoint destination = GetRandomCheckpoint(destinationPoints);
-        destinationPoints.Remove(destination);
+        RemoveDestination(destination);
         //dialogue.target = destination.resident; // set the vampire's target to the resident at their destination
         Checkpoint exit = GetRandomCheckpoint(exitPoints);
-
-
 
         // Assign pathing
         pathing.path = path;
         pathing.startCheckpoint = start;
         pathing.destinationCheckpoint = destination;
 
-        // Assign next destination (for after first stop)
-        if (testScript != null)
-        {
-            testScript.nextDestination = exit;
-        }
-
         // Randomly assign warrant
         attributes.validWarrant = Random.value > 0.5f;
-
-        //Debug.Log($"Spawned {enemy.name} | Cool: {attributes.validWarrant}");
     }
 
     // helper for random Checkpoint decisions
     // picks a random Checkpoint from the input list
     Checkpoint GetRandomCheckpoint(List<Checkpoint> list)
     {
-        if (list == null || list.Count == 0)
-        {
-            Debug.LogError("Checkpoint list is empty!");
-            return null;
-        }
-
         return list[Random.Range(0, list.Count)];
+    }
+
+    // 
+    private void AddDestination(Checkpoint destination)
+    {
+        if (destinationPoints.Contains(destination)) return;
+        destinationPoints.Add(destination);
+    }
+
+    private void RemoveDestination(Checkpoint destination)
+    {
+        if (destinationPoints.Contains(destination)) {
+            destinationPoints.Remove(destination);
+        }
     }
 }

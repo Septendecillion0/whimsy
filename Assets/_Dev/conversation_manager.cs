@@ -10,7 +10,7 @@ public class ConversationManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        
     }
 
     void Awake()
@@ -27,10 +27,11 @@ public class ConversationManager : MonoBehaviour
 
     public void CreateConversation(Landmark landmark)
     {
-        Debug.Log("Conversation created");
+        Debug.Log("Conversation attempt with properties: " + landmark);
         GameObject new_conversation_prefab = Instantiate(conversation_prefab);
         Conversation new_conversation = new_conversation_prefab.GetComponent<Conversation>();
-        new_conversation.transform.SetParent(transform, false);
+        Debug.Log("conversation prefab created with" + new_conversation_prefab + new_conversation);
+        new_conversation_prefab.transform.SetParent(transform, false);
         new_conversation.landmark = landmark;
         new_conversation.vampire = landmark.vampire;
         new_conversation.villager = landmark.resident;
