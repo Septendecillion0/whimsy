@@ -6,9 +6,9 @@ public class Conversation : MonoBehaviour
 {
 
 
-    public GameObject vampire;
+    public VampireAttributes vampire;
     public GameObject villager;
-    public GameObject landmark;
+    public Landmark landmark;
 
     public TextAsset ink_json;
     Story ink_story;
