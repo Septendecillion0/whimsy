@@ -1,8 +1,7 @@
 using UnityEngine;
 
-public class GameStateManager : MonoBehaviour
+public class GameStateManager2 : MonoBehaviour
 {
-    public static GameStateManager Instance;
     public enum GameState
     {
         Map,

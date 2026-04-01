@@ -101,7 +101,7 @@ public class VampirePathing : MonoBehaviour
         //Debug.Log($"{gameObject.name} reached destination!");
 
         OnDestinationReached?.Invoke(this);
-        ConversationManager.Instance.createConversation(currentCheckpoint.GetComponent<Landmark>());
+        ConversationManager.Instance.CreateConversation(currentCheckpoint.GetComponent<Landmark>());
     }
 
     public void SetNewDestination(Checkpoint newDestination)
@@ -123,7 +123,5 @@ public class VampirePathing : MonoBehaviour
             Debug.LogError("No path to new destination!");
             reachedDestination = true;
         }
-
-
     }
 }

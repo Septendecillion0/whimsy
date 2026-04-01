@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class ConversationManager : MonoBehaviour
 {
-
+    public static ConversationManager Instance;
     public GameObject conversation_prefab;
     public GameObject selected_conversation;
 
@@ -19,18 +19,11 @@ public class ConversationManager : MonoBehaviour
 
     }
 
-    public void OnSpace(InputAction.CallbackContext context)
-    {
-        if (context.started)
-        {
-            createConversation();
-        }
-    }
-
     public void CreateConversation(Landmark landmark)
     {
         Debug.Log("Conversation created");
-        Conversation new_conversation = Instantiate(conversation_prefab);
+        GameObject new_conversation_prefab = Instantiate(conversation_prefab);
+        Conversation new_conversation = new_conversation_prefab.GetComponent<Conversation>();
         new_conversation.transform.SetParent(transform, false);
         new_conversation.landmark = landmark;
         new_conversation.vampire = landmark.vampire;

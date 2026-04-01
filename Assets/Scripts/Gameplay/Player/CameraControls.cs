@@ -42,36 +42,36 @@ public class CameraControls : MonoBehaviour
 
     public void OnClick(InputAction.CallbackContext context)
     {
-        if (context.started)
-        {
-            RaycastHit2D hit = Physics2D.GetRayIntersection(mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
-            if (hit.collider != null)
-            {
-                // if (hit.collider.gameObject.CompareTag("Vampire"))
-                // {
-                //     if (hit.collider)
-                //     {
-                //         Debug.Log("Vampire clicked");
-                //         hit.collider.gameObject.SetActive(false);
-                //     }
-                // }
-                if (hit.collider.gameObject.CompareTag("Landmark"))
-                {
-                    Debug.Log("Landmark clicked");
-                    if (hit.collider)
-                    {
-                        landmark landmark = hit.collider.gameObject.GetComponent<landmark>();
-                        if (landmark.eventActive)
-                        {
-                            landmark.zoomIn();
-                        }
-                    }
-                }
+        // if (context.started)
+        // {
+        //     RaycastHit2D hit = Physics2D.GetRayIntersection(mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
+        //     if (hit.collider != null)
+        //     {
+        //         // if (hit.collider.gameObject.CompareTag("Vampire"))
+        //         // {
+        //         //     if (hit.collider)
+        //         //     {
+        //         //         Debug.Log("Vampire clicked");
+        //         //         hit.collider.gameObject.SetActive(false);
+        //         //     }
+        //         // }
+        //         if (hit.collider.gameObject.CompareTag("Landmark"))
+        //         {
+        //             Debug.Log("Landmark clicked");
+        //             if (hit.collider)
+        //             {
+        //                 Landmark landmark = hit.collider.gameObject.GetComponent<Landmark>();
+        //                 if (landmark.active)
+        //                 {
+        //                     landmark.zoomIn();
+        //                 }
+        //             }
+        //         }
 
-            }
+        //     }
 
 
-        }
+        // }
     }
 
     public void LateUpdate()

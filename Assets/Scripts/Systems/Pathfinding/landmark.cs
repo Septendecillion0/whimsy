@@ -16,7 +16,7 @@ public class Landmark : Checkpoint
         Car,
         Street
     }
-    
+
     private bool active;
     private Collider2D encounterButton;
     private ConversationManager conversationManager;
@@ -33,7 +33,7 @@ public class Landmark : Checkpoint
 
     private void Update()
     {   
-        if ((!active) || (GameStateManager.Instance.currentState != GameState.Map)) return;
+        if ((!active) || (GameStateManager.Instance.currentState != GameStateManager.GameState.Map)) return;
 
         // Detect left mouse button
         if (Input.GetMouseButtonDown(0))
@@ -51,7 +51,7 @@ public class Landmark : Checkpoint
 
     public void OnLandmarkClicked()
     {
-        GameStateManager.Instance.SetState(GameState.Dialogue);
+        GameStateManager.Instance.SetState(GameStateManager.GameState.Dialogue);
         //UIManager.Instance.ShowConversation(conversation);
     }
 
