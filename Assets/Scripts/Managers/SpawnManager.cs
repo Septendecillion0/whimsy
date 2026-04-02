@@ -70,7 +70,11 @@ public class SpawnManager : MonoBehaviour
     // picks a random Checkpoint from the input list
     Checkpoint GetRandomCheckpoint(List<Checkpoint> list)
     {
-        return list[Random.Range(0, list.Count)];
+        if (list.Count == 0)
+        {
+            return exitPoints[Random.Range(0, exitPoints.Count)];
+        }
+        return list[Random.Range(0, list.Count - 1)];
     }
 
     // 
@@ -82,7 +86,8 @@ public class SpawnManager : MonoBehaviour
 
     private void RemoveDestination(Checkpoint destination)
     {
-        if (destinationPoints.Contains(destination)) {
+        if (destinationPoints.Contains(destination))
+        {
             destinationPoints.Remove(destination);
         }
     }

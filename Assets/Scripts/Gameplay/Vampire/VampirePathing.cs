@@ -31,7 +31,7 @@ public class VampirePathing : MonoBehaviour
     {
         if (path == null || startCheckpoint == null || destinationCheckpoint == null)
         {
-            Debug.LogError("VampirePathing is missing references!");
+            //Debug.LogError("VampirePathing is missing references!");
             enabled = false;
             return;
         }
@@ -92,11 +92,17 @@ public class VampirePathing : MonoBehaviour
     {
         Landmark currentLandmark = currentCheckpoint.GetComponent<Landmark>();
 
+        if (currentLandmark == null)
+        {
+            return;
+        }
+
+
         currentLandmark.vampire = gameObject.GetComponent<VampireAttributes>();
         Debug.Log("Instance: " + ConversationManager.Instance);
         Debug.Log("Landmark: " + currentLandmark);
         ConversationManager.Instance.CreateConversation(currentLandmark);
-        
+
     }
 
     public void SetNewDestination(Checkpoint newDestination)

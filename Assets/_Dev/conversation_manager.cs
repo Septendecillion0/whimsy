@@ -7,10 +7,12 @@ public class ConversationManager : MonoBehaviour
     public GameObject conversation_prefab;
     public Conversation selected_conversation;
 
+    public int conversation_count = 0;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     void Awake()
@@ -27,10 +29,12 @@ public class ConversationManager : MonoBehaviour
 
     public void CreateConversation(Landmark landmark)
     {
-        Debug.Log("Conversation attempt with properties: " + landmark);
+        //Debug.Log("Conversation attempt with properties: " + landmark);
         GameObject new_conversation_prefab = Instantiate(conversation_prefab);
         Conversation new_conversation = new_conversation_prefab.GetComponent<Conversation>();
-        Debug.Log("conversation prefab created with" + new_conversation_prefab + new_conversation);
+        //Debug.Log("conversation prefab created with" + new_conversation_prefab + new_conversation);
+        conversation_count++;
+        new_conversation_prefab.name = "Conversation " + conversation_count;
         new_conversation_prefab.transform.SetParent(transform, false);
         new_conversation.landmark = landmark;
         new_conversation.vampire = landmark.vampire;
@@ -40,7 +44,7 @@ public class ConversationManager : MonoBehaviour
 
     public void TEST_CreateConversationInTestScene()
     {
-        Debug.Log("Conversation created");
+        //Debug.Log("Conversation created");
         GameObject new_conversation_prefab = Instantiate(conversation_prefab);
         Conversation new_conversation = new_conversation_prefab.GetComponent<Conversation>();
         new_conversation.transform.SetParent(transform, false);
@@ -53,6 +57,7 @@ public class ConversationManager : MonoBehaviour
     }
     public void SetSelectedConversation(Conversation conversation)
     {
+        //Debug.Log("Setting selected conversation: " + conversation.name);
         selected_conversation = conversation;
     }
 

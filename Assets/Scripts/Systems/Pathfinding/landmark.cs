@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 /// <summary>
 /// Landmark is a subclass of Checkpoint
 /// represents a house/car/location where interactions and encounters will take place (rather than just a pathing node)
 /// Takes resident and vampire as input and gives it to ConversationManager to 
 /// </summary>
-public class Landmark : Checkpoint
+public class Landmark : Checkpoint, IPointerClickHandler
 {
     [Header("Data")]
     // TODO: replace with Resident monobehavior once implemented
@@ -21,7 +23,6 @@ public class Landmark : Checkpoint
     private Collider2D encounterButton;
     private ConversationManager conversationManager;
     private Conversation conversation;
-
     private void Awake()
     {
         //conversationManager = ConversationManager.Instance;
@@ -32,7 +33,7 @@ public class Landmark : Checkpoint
     }
 
     private void Update()
-    {   
+    {
         if ((!active) || (GameStateManager.Instance.currentState != GameStateManager.GameState.Map)) return;
 
         // Detect left mouse button
@@ -49,11 +50,20 @@ public class Landmark : Checkpoint
         // }
     }
 
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        //Debug.Log(gameObject.name + " was clicked!");
+        if ((!active) || (GameStateManager.Instance.currentState != GameStateManager.GameState.Map)) return;
+
+        //Debug.Log("Landmark clicked and active");
+        OnLandmarkClicked();
+    }
+
     public void OnLandmarkClicked()
     {
         GameStateManager.Instance.SetState(GameStateManager.GameState.Dialogue);
         ConversationManager.Instance.SetSelectedConversation(conversation);
-        //UIManager.Instance.ShowConversation();
+        UIManager.Instance.ShowPorchScene();
     }
 
     // Called by ConversationManager when a conversation is created
@@ -62,5 +72,6 @@ public class Landmark : Checkpoint
     {
         active = true;
         conversation = new_conversation;
+        transform.Find("EventWarningSign").gameObject.SetActive(true);
     }
 }

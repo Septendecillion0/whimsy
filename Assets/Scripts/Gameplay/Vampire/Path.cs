@@ -88,6 +88,6 @@ public class Path : MonoBehaviour
             connectionTable[start] = map;
         }
 
-        Debug.Log("Connection table built!");
+        //Debug.Log("Connection table built!");
     }
 }

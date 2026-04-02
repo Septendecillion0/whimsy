@@ -32,7 +32,7 @@ public class Conversation : MonoBehaviour
         if (conversation_started && !delay_cooldown)
         {
             StartCoroutine(DialogueDelay(3.0f));
-            Debug.Log(next_line);
+            //Debug.Log(next_line);
             if (ink_story.canContinue)
             {
                 next_line = ink_story.Continue();
@@ -47,7 +47,7 @@ public class Conversation : MonoBehaviour
     public void StartConversation()
     {
         conversation_started = true;
-        Debug.Log("Conversation started");
+        //Debug.Log("Conversation started");
     }
 
     public void OnConversationEnd()

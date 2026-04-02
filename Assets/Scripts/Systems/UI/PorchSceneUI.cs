@@ -20,7 +20,16 @@ public class PorchSceneUI : MonoBehaviour
 
     void OnEnable()
     {
+
         current_conversation = ConversationManager.Instance.selected_conversation.GetComponent<Conversation>();
+        Debug.Log("PorchSceneUI enabled: " + current_conversation.name);
+    }
+
+    public void ClosePorchScene()
+    {
+        Debug.Log("Closing PorchSceneUI");
+        GameStateManager.Instance.currentState = GameStateManager.GameState.Map;
+        this.gameObject.SetActive(false);
     }
 
     void Update()
