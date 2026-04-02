@@ -36,23 +36,24 @@ public class Landmark : Checkpoint
         if ((!active) || (GameStateManager.Instance.currentState != GameStateManager.GameState.Map)) return;
 
         // Detect left mouse button
-        if (Input.GetMouseButtonDown(0))
-        {
-            // Convert mouse position to world point
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        // if (Input.GetMouseButtonDown(0))
+        // {
+        //     // Convert mouse position to world point
+        //     Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            // Check if the click overlaps the landmark collider
-            if (encounterButton.OverlapPoint(mousePos))
-            {
-                OnLandmarkClicked();
-            }
-        }
+        //     // Check if the click overlaps the landmark collider
+        //     if (encounterButton.OverlapPoint(mousePos))
+        //     {
+        //         OnLandmarkClicked();
+        //     }
+        // }
     }
 
     public void OnLandmarkClicked()
     {
         GameStateManager.Instance.SetState(GameStateManager.GameState.Dialogue);
-        //UIManager.Instance.ShowConversation(conversation);
+        ConversationManager.Instance.SetSelectedConversation(conversation);
+        //UIManager.Instance.ShowConversation();
     }
 
     // Called by ConversationManager when a conversation is created

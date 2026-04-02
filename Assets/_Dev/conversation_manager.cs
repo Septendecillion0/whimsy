@@ -5,7 +5,7 @@ public class ConversationManager : MonoBehaviour
 {
     public static ConversationManager Instance;
     public GameObject conversation_prefab;
-    public GameObject selected_conversation;
+    public Conversation selected_conversation;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -44,14 +44,14 @@ public class ConversationManager : MonoBehaviour
         GameObject new_conversation_prefab = Instantiate(conversation_prefab);
         Conversation new_conversation = new_conversation_prefab.GetComponent<Conversation>();
         new_conversation.transform.SetParent(transform, false);
-        selected_conversation = new_conversation_prefab;
+        selected_conversation = new_conversation;
     }
 
-    public GameObject GetSelectedConversation()
+    public Conversation GetSelectedConversation()
     {
         return selected_conversation;
     }
-    public void SetSelectedConversation(GameObject conversation)
+    public void SetSelectedConversation(Conversation conversation)
     {
         selected_conversation = conversation;
     }
