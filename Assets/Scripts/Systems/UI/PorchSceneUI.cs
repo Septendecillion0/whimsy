@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class PorchSceneUI : MonoBehaviour
 {
@@ -27,14 +28,19 @@ public class PorchSceneUI : MonoBehaviour
 
     public void ClosePorchScene()
     {
-        Debug.Log("Closing PorchSceneUI");
+        //Debug.Log("Closing PorchSceneUI");
         GameStateManager.Instance.currentState = GameStateManager.GameState.Map;
         this.gameObject.SetActive(false);
     }
 
     void Update()
     {
-        transform.Find("Dialogue").GetComponent<TextMeshProUGUI>().text = current_conversation.next_line;
+
+        //transform.Find("VampireSprite").GetComponent<Image>().sprite = current_conversation.vampire.GetComponent<SpriteRenderer>().sprite;
+        transform.Find("VampireDialogue").GetComponent<TextMeshProUGUI>().text = string.Join(System.Environment.NewLine, current_conversation.vampire_history);
+        transform.Find("VillagerDialogue").GetComponent<TextMeshProUGUI>().text = string.Join(System.Environment.NewLine, current_conversation.villager_history);
+        transform.Find("NarrationDialogue").GetComponent<TextMeshProUGUI>().text = string.Join(System.Environment.NewLine, current_conversation.narration_history);
+        //transform.Find("Dialogue").GetComponent<TextMeshProUGUI>().text = current_conversation.next_line;
     }
 
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 using Ink.Runtime;
 using System.Collections;
-
+using System.Collections.Generic;
 public class Conversation : MonoBehaviour
 {
 
@@ -17,12 +17,17 @@ public class Conversation : MonoBehaviour
     bool delay_cooldown = false;
     public string next_line = "";
 
+    public List<string> vampire_history = new List<string>();
+    public List<string> villager_history = new List<string>();
+    public List<string> narration_history = new List<string>();
+
     void Awake()
     {
         ink_story = new Story(ink_json.text);
         if (ink_story.canContinue)
         {
             next_line = ink_story.Continue();
+            InterpretDialogue();
         }
     }
 
@@ -36,6 +41,7 @@ public class Conversation : MonoBehaviour
             if (ink_story.canContinue)
             {
                 next_line = ink_story.Continue();
+                InterpretDialogue();
             }
             else
             {
@@ -53,6 +59,40 @@ public class Conversation : MonoBehaviour
     public void OnConversationEnd()
     {
         // TODO: Add logic to send vampire to next landmark
+    }
+
+    private void InterpretDialogue()
+    {
+        List<string> tags = ink_story.currentTags;
+        if (tags.Contains("VAMPIRE"))
+        {
+            vampire_history.Add(next_line);
+        }
+        else if (tags.Contains("VILLAGER"))
+        {
+            villager_history.Add(next_line);
+        }
+        else
+        {
+            narration_history.Add(next_line);
+        }
+
+
+        if (tags.Contains("VIOLATION"))
+        {
+            vampire.violation = true;
+        }
+
+        if (tags.Contains("VAMPIRE_HUNTS"))
+        {
+            Debug.Log("Vampire devours the victim");
+        }
+        if (tags.Contains("VAMPIRE_LEAVES"))
+        {
+            //vampire = null;
+            Debug.Log("Vampire leaves");
+        }
+
     }
 
 
