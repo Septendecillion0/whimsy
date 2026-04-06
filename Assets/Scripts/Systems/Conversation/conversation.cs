@@ -95,11 +95,39 @@ public class Conversation : MonoBehaviour
             vampire.GetComponent<VampirePathing>().SetNewDestination(GameObject.Find("Exit").GetComponent<Checkpoint>());
             vampire = null;
 
-
         }
 
     }
 
+    public void Report()
+    {
+        if (vampire != null && vampire.violation)
+        {
+            Debug.Log("Vampire Report Attempt: Vampire commited a violation!");
+            vampire.reported = true;
+        }
+        else
+        {
+            Debug.Log("Vampire Report Attempt: No Violation Detected");
+        }
+    }
+
+    public void Combust()
+    {
+        // if (vampire != null && vampire.violation)
+        // {
+        //     Debug.Log("Vampire Report Attempt: Vampire commited a violation!");
+        // }
+        if (vampire != null)
+        {
+            Debug.Log("Emergency Protocol! Vampire Combusted!");
+            narration_history.Add("The vampire erupts into flames!");
+            conversation_started = false;
+            vampire.combusted = true;
+            vampire.gameObject.SetActive(false);
+            vampire = null;
+        }
+    }
 
     IEnumerator DialogueDelay(float delay)
     {

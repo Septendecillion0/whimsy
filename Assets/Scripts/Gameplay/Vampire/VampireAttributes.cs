@@ -5,6 +5,8 @@ using UnityEngine;
 public class VampireAttributes : MonoBehaviour
 {
     public bool validWarrant;
+    public bool reported = false;
+    public bool combusted = false;
     public bool somethingAttempted;
     public float speed = 3f;
     public bool violation = false;

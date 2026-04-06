@@ -99,8 +99,8 @@ public class VampirePathing : MonoBehaviour
 
 
         currentLandmark.vampire = gameObject.GetComponent<VampireAttributes>();
-        Debug.Log("Instance: " + ConversationManager.Instance);
-        Debug.Log("Landmark: " + currentLandmark);
+        //Debug.Log("Instance: " + ConversationManager.Instance);
+        //Debug.Log("Landmark: " + currentLandmark);
         ConversationManager.Instance.CreateConversation(currentLandmark);
 
     }

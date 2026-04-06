@@ -23,7 +23,7 @@ public class PorchSceneUI : MonoBehaviour
     {
 
         current_conversation = ConversationManager.Instance.selected_conversation.GetComponent<Conversation>();
-        Debug.Log("PorchSceneUI enabled: " + current_conversation.name);
+        //Debug.Log("PorchSceneUI enabled: " + current_conversation.name);
     }
 
     public void ClosePorchScene()
@@ -62,6 +62,16 @@ public class PorchSceneUI : MonoBehaviour
         transform.Find("VillagerDialogue").GetComponent<TextMeshProUGUI>().text = string.Join(System.Environment.NewLine, current_conversation.villager_history);
         transform.Find("NarrationDialogue").GetComponent<TextMeshProUGUI>().text = string.Join(System.Environment.NewLine, current_conversation.narration_history);
         //transform.Find("Dialogue").GetComponent<TextMeshProUGUI>().text = current_conversation.next_line;
+    }
+
+    public void OnReportButtonClicked()
+    {
+        ConversationManager.Instance.selected_conversation.Report();
+    }
+
+    public void OnCombustButtonClicked()
+    {
+        ConversationManager.Instance.selected_conversation.Combust();
     }
 
 }
