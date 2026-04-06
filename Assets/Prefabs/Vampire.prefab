@@ -84,8 +84,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 462753519
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 3037530889436939321, guid: b3cbadcbb6c5fcc4ea03bf6fad4adfe2, type: 3}
@@ -204,9 +204,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15203c4edd5c89a4daaf53d09392065b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DELETEpathingtestscript
-  pathing: {fileID: 7634578938889340375}
-  attributes: {fileID: 5683198329147613685}
-  nextDestination: {fileID: 0}
 --- !u!114 &5683198329147613685
 MonoBehaviour:
   m_ObjectHideFlags: 0
