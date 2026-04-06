@@ -101,14 +101,10 @@ public class Conversation : MonoBehaviour
 
     public void Report()
     {
-        if (vampire != null && vampire.violation)
+        if (vampire != null)
         {
-            Debug.Log("Vampire Report Attempt: Vampire commited a violation!");
+            Debug.Log("Vampire Reported");
             vampire.reported = true;
-        }
-        else
-        {
-            Debug.Log("Vampire Report Attempt: No Violation Detected");
         }
     }
 

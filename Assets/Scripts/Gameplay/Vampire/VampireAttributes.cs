@@ -16,5 +16,18 @@ public class VampireAttributes : MonoBehaviour
         somethingAttempted = false;
     }
 
-
+    public void validateReport()
+    {
+        if (reported)
+        {
+            if (violation)
+            {
+                Debug.Log("Vampire has been reported CORRECTLY!");
+            }
+            else
+            {
+                Debug.Log("Vampire has been reported INCORRECTLY!");
+            }
+        }
+    }
 }
