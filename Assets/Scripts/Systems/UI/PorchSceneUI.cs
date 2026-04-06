@@ -36,7 +36,28 @@ public class PorchSceneUI : MonoBehaviour
     void Update()
     {
 
-        //transform.Find("VampireSprite").GetComponent<Image>().sprite = current_conversation.vampire.GetComponent<SpriteRenderer>().sprite;
+        if (current_conversation.vampire != null)
+        {
+            transform.Find("VampireSprite").gameObject.SetActive(true);
+            transform.Find("VampireSprite").GetComponent<Image>().sprite = current_conversation.vampire.GetComponent<SpriteRenderer>().sprite;
+            transform.Find("VampireSprite").GetComponent<Image>().color = current_conversation.vampire.GetComponent<SpriteRenderer>().color;
+        }
+        else
+        {
+            transform.Find("VampireSprite").gameObject.SetActive(false);
+        }
+
+        if (current_conversation.villager != null)
+        {
+            transform.Find("CivilianSprite").gameObject.SetActive(true);
+            transform.Find("CivilianSprite").GetComponent<Image>().sprite = current_conversation.villager.GetComponent<SpriteRenderer>().sprite;
+            transform.Find("CivilianSprite").GetComponent<Image>().color = current_conversation.villager.GetComponent<SpriteRenderer>().color;
+        }
+        else
+        {
+            transform.Find("CivilianSprite").gameObject.SetActive(false);
+        }
+
         transform.Find("VampireDialogue").GetComponent<TextMeshProUGUI>().text = string.Join(System.Environment.NewLine, current_conversation.vampire_history);
         transform.Find("VillagerDialogue").GetComponent<TextMeshProUGUI>().text = string.Join(System.Environment.NewLine, current_conversation.villager_history);
         transform.Find("NarrationDialogue").GetComponent<TextMeshProUGUI>().text = string.Join(System.Environment.NewLine, current_conversation.narration_history);

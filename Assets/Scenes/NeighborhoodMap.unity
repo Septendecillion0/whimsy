@@ -174,7 +174,7 @@ PrefabInstance:
     - target: {fileID: 9210655788798102776, guid: 77d1a734873fba649b14bde7ecef694a, type: 3}
       propertyPath: resident
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1354917186}
     - target: {fileID: 9210655788798102776, guid: 77d1a734873fba649b14bde7ecef694a, type: 3}
       propertyPath: 'neighbors.Array.data[0]'
       value: 
@@ -772,7 +772,7 @@ PrefabInstance:
     - target: {fileID: 9210655788798102776, guid: 77d1a734873fba649b14bde7ecef694a, type: 3}
       propertyPath: resident
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1354917186}
     - target: {fileID: 9210655788798102776, guid: 77d1a734873fba649b14bde7ecef694a, type: 3}
       propertyPath: 'neighbors.Array.data[0]'
       value: 
@@ -1312,7 +1312,7 @@ PrefabInstance:
     - target: {fileID: 7357706931948608268, guid: 75b8f4af06242214fb50aae008f42173, type: 3}
       propertyPath: resident
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1354917186}
     - target: {fileID: 7357706931948608268, guid: 75b8f4af06242214fb50aae008f42173, type: 3}
       propertyPath: 'neighbors.Array.data[0]'
       value: 
@@ -1525,6 +1525,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &1354917186 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1875904580779134880, guid: ad96d6549b7d87a43bf563dc1e523265, type: 3}
+  m_PrefabInstance: {fileID: 1858813117}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1428193346 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8436200879777780528, guid: f25dbc04b64820c4795be5cf0fc427f1, type: 3}
@@ -1759,7 +1764,7 @@ PrefabInstance:
     - target: {fileID: 8198965119256482144, guid: 5d7a9e9d039840d439ca9b0da2b24737, type: 3}
       propertyPath: resident
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1354917186}
     - target: {fileID: 8198965119256482144, guid: 5d7a9e9d039840d439ca9b0da2b24737, type: 3}
       propertyPath: 'neighbors.Array.data[0]'
       value: 

@@ -86,11 +86,16 @@ public class Conversation : MonoBehaviour
         if (tags.Contains("VAMPIRE_HUNTS"))
         {
             Debug.Log("Vampire devours the victim");
+
         }
         if (tags.Contains("VAMPIRE_LEAVES"))
         {
             //vampire = null;
             Debug.Log("Vampire leaves");
+            vampire.GetComponent<VampirePathing>().SetNewDestination(GameObject.Find("Exit").GetComponent<Checkpoint>());
+            vampire = null;
+
+
         }
 
     }

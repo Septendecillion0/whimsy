@@ -112,4 +112,5 @@ public class VampirePathing : MonoBehaviour
 
         targetCheckpoint = path.FindConnection(currentCheckpoint, destinationCheckpoint);
     }
+
 }
