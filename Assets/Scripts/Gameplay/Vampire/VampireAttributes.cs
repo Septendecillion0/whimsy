@@ -23,10 +23,13 @@ public class VampireAttributes : MonoBehaviour
             if (violation)
             {
                 Debug.Log("Vampire has been reported CORRECTLY!");
+                UIManager.Instance.SendMessage("A vampire has been reported correctly!", Color.green);
+
             }
             else
             {
                 Debug.Log("Vampire has been reported INCORRECTLY!");
+                UIManager.Instance.SendMessage("A vampire has been reported incorrectly!", Color.red);
             }
         }
     }

@@ -85,38 +85,41 @@ public class Conversation : MonoBehaviour
 
         if (tags.Contains("VAMPIRE_HUNTS"))
         {
-            Debug.Log("Vampire devours the victim");
 
+            //Debug.Log("Vampire devours the victim");
+            villager = null;
+            SendVampireAway();
+            UIManager.Instance.SendMessage("A villager has been devoured!", Color.red);
         }
         if (tags.Contains("VAMPIRE_LEAVES"))
         {
-            //vampire = null;
-            Debug.Log("Vampire leaves");
-            vampire.GetComponent<VampirePathing>().SetNewDestination(GameObject.Find("Exit").GetComponent<Checkpoint>());
-            vampire = null;
-
+            SendVampireAway();
         }
 
     }
 
+    public void SendVampireAway()
+    {
+        //Debug.Log("Vampire leaves");
+        vampire.GetComponent<VampirePathing>().SetNewDestination(GameObject.Find("Exit").GetComponent<Checkpoint>());
+        vampire = null;
+    }
+
     public void Report()
     {
-        if (vampire != null)
+        if (vampire != null && !vampire.reported)
         {
-            Debug.Log("Vampire Reported");
+            //Debug.Log("Vampire Reported");
             vampire.reported = true;
+            UIManager.Instance.SendMessage("Vampire conduct reported!");
         }
     }
 
     public void Combust()
     {
-        // if (vampire != null && vampire.violation)
-        // {
-        //     Debug.Log("Vampire Report Attempt: Vampire commited a violation!");
-        // }
         if (vampire != null)
         {
-            Debug.Log("Emergency Protocol! Vampire Combusted!");
+            //Debug.Log("Emergency Protocol! Vampire Combusted!");
             narration_history.Add("The vampire erupts into flames!");
             conversation_started = false;
             vampire.combusted = true;
