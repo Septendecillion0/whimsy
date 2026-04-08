@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
     public List<string> message_queue = new List<string>();
     public List<Color> message_colors = new List<Color>();
 
-    private int TEST_counter = 0;
+    //private int TEST_counter = 0;
 
     void Awake()
     {
@@ -42,12 +42,12 @@ public class UIManager : MonoBehaviour
 
     public void OnSpacePressed(InputAction.CallbackContext context)
     {
-        if (context.started)
-        {
-            Debug.Log("Space pressed");
-            SendMessage("Message " + TEST_counter, Color.orange);
-            TEST_counter++;
-        }
+        // if (context.started)
+        // {
+        //     Debug.Log("Space pressed");
+        //     SendMessage("Message " + TEST_counter, Color.orange);
+        //     TEST_counter++;
+        // }
     }
 
     public void ShowPorchScene()

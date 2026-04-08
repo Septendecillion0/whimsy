@@ -93,7 +93,7 @@ public class VampirePathing : MonoBehaviour
     {
         if (currentCheckpoint.name == "Exit")
         {
-            Debug.Log("Vampire has reached the exit!");
+            //Debug.Log("Vampire has reached the exit!");
             GetComponent<VampireAttributes>().validateReport();
         }
 
@@ -107,7 +107,7 @@ public class VampirePathing : MonoBehaviour
         currentLandmark.vampire = gameObject.GetComponent<VampireAttributes>();
 
         //Debug.Log("Instance: " + ConversationManager.Instance);
-        Debug.Log("Landmark: " + currentLandmark);
+        //Debug.Log("Landmark: " + currentLandmark);
         ConversationManager.Instance.CreateConversation(currentLandmark);
 
     }

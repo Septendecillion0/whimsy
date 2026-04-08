@@ -36,6 +36,11 @@ public class Landmark : Checkpoint, IPointerClickHandler
     {
         if ((!active) || (GameStateManager.Instance.currentState != GameStateManager.GameState.Map)) return;
 
+        if (conversation.conversation_ended)
+        {
+            transform.Find("EventWarningSign").gameObject.SetActive(false);
+        }
+
         // Detect left mouse button
         // if (Input.GetMouseButtonDown(0))
         // {

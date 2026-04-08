@@ -14,6 +14,7 @@ public class Conversation : MonoBehaviour
     Story ink_story;
 
     public bool conversation_started = true;
+    public bool conversation_ended = false;
     bool delay_cooldown = false;
     public string next_line = "";
 
@@ -103,6 +104,7 @@ public class Conversation : MonoBehaviour
         //Debug.Log("Vampire leaves");
         vampire.GetComponent<VampirePathing>().SetNewDestination(GameObject.Find("Exit").GetComponent<Checkpoint>());
         vampire = null;
+        conversation_ended = true;
     }
 
     public void Report()
@@ -125,7 +127,10 @@ public class Conversation : MonoBehaviour
             vampire.combusted = true;
             vampire.gameObject.SetActive(false);
             vampire = null;
+            UIManager.Instance.SendMessage("Vampire Vanquished!", Color.red);
+            conversation_ended = true;
         }
+
     }
 
     IEnumerator DialogueDelay(float delay)

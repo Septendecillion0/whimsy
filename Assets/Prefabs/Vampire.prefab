@@ -217,8 +217,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VampireAttributes
   validWarrant: 1
+  reported: 0
+  combusted: 0
   somethingAttempted: 0
   speed: 3
+  violation: 0
 --- !u!60 &153657543639345448
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -226,7 +229,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1462522432570561770}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
