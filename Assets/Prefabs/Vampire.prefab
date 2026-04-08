@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.02, y: -1.45, z: 0}
-  m_LocalScale: {x: -0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: -0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8047056839574490950}
@@ -88,9 +88,9 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 3037530889436939321, guid: b3cbadcbb6c5fcc4ea03bf6fad4adfe2, type: 3}
-  m_Color: {r: 1, g: 0.5113207, b: 0.5113207, a: 1}
-  m_FlipX: 0
+  m_Sprite: {fileID: 8237338679300467516, guid: be3cacb1ee4e9db4e8de9ce953c0495f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.22, y: 0.16}
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   target: {fileID: 0}
-  conversation_prefab: {fileID: 5517649606754377508, guid: 589249246b103874d8c4fd73f20f8d77, type: 3}
+  conversation_prefab: {fileID: 0}
   speechBubble: {fileID: 98574021858710428, guid: e6474eea2014dbf468d85133a978fffd, type: 3}
   dialogueContainer: {fileID: 3625428703562430137}
   pathing: {fileID: 7634578938889340375}
@@ -260,7 +260,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.64, y: 6.19}
+    oldSize: {x: 8.17, y: 8.97}
     newSize: {x: 0.22, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

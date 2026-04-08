@@ -34,7 +34,7 @@ public class Conversation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (conversation_started && !delay_cooldown)
+        if (conversation_started && !delay_cooldown && !conversation_ended)
         {
             InterpretDialogue();
         }
@@ -102,6 +102,8 @@ public class Conversation : MonoBehaviour
     public void SendVampireAway()
     {
         //Debug.Log("Vampire leaves");
+        Debug.Log(vampire.gameObject.name);
+        //Debug.Log(Find("Exit").name);
         vampire.GetComponent<VampirePathing>().SetNewDestination(GameObject.Find("Exit").GetComponent<Checkpoint>());
         vampire = null;
         conversation_ended = true;
