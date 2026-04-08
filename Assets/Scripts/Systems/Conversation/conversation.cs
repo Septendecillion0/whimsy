@@ -87,7 +87,7 @@ public class Conversation : MonoBehaviour
         if (tags.Contains("VAMPIRE_HUNTS"))
         {
 
-            //Debug.Log("Vampire devours the victim");
+            Debug.Log("Vampire devours the victim");
             villager = null;
             SendVampireAway();
             UIManager.Instance.SendMessage("A villager has been devoured!", Color.red);

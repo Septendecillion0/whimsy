@@ -3721,8 +3721,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 168378016}
   - {fileID: 521782181}
+  - {fileID: 168378016}
   - {fileID: 901797724}
   m_Father: {fileID: 712697996}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4231,7 +4231,7 @@ PrefabInstance:
       objectReference: {fileID: 2046036902}
     - target: {fileID: 2167339367254696036, guid: f25dbc04b64820c4795be5cf0fc427f1, type: 3}
       propertyPath: spawnInterval
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2167339367254696036, guid: f25dbc04b64820c4795be5cf0fc427f1, type: 3}
       propertyPath: 'exitPoints.Array.data[0]'
