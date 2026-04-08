@@ -5,7 +5,7 @@ VAR shift_end = 3
 
 
 // game loads into the first day, starting in the map view. In the top right corner is the settings button and the clock.
-
+=== start ===
 Welcome to your first day on the job. I'm your boss and I'll be helping you get situated. #PHONE #{delay}
 Looks like you already found the map! This is your assigned neighborhood for today. #PHONE #{delay}
 There is also a clock with the date and time, shown on the top right of the screen. Your shift ends at {shift_end}am. #PHONE #{delay}
@@ -73,7 +73,7 @@ You may need to juggle more than one scenario at a time. Just remember that all 
 If you leave a scenario before it ends to check on another one, don't worry. You will still be able to go back to it, but remember that it's in real-time; things may happen while you're not watching. #PHONE #{delay}
 
 Okay, I hope you caught all of that. If there's anything you forget, check the handbook. It's on the right. Good luck! #PHONE #{delay}
-
+-> END
 //end tutorial.
 
 

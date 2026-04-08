@@ -1,0 +1,494 @@
+fileFormatVersion: 2
+guid: 2933a84aeec764a7e97ff2ca504c10e6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6882933633741700738
+    second: text-message-sprite_0
+  - first:
+      213: 7225583455248237038
+    second: text-message-sprite_1
+  - first:
+      213: 4669784199695406389
+    second: text-message-sprite_2
+  - first:
+      213: -5369379849687912327
+    second: text-message-sprite_3
+  - first:
+      213: -8627669550331378873
+    second: text-message-sprite_4
+  - first:
+      213: -7109800732605134217
+    second: text-message-sprite_5
+  - first:
+      213: 1581889464604335611
+    second: text-message-sprite_6
+  - first:
+      213: 2591649502366407008
+    second: text-message-sprite_7
+  - first:
+      213: -8298163568046978850
+    second: text-message-sprite_8
+  - first:
+      213: -6419070593909068017
+    second: text-message-sprite_9
+  - first:
+      213: -4675312926176657916
+    second: text-message-sprite_10
+  - first:
+      213: 7520455696614159956
+    second: text-message-sprite_11
+  - first:
+      213: -7592911977165027655
+    second: text-message-sprite_12
+  - first:
+      213: -1081374205634888974
+    second: text-message-sprite_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: text-message-sprite_0
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 340
+        width: 106
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e71cc34d358ea70a0800000000000000
+      internalID: -6882933633741700738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: text-message-sprite_1
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 340
+        width: 119
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee1c209aedd664460800000000000000
+      internalID: 7225583455248237038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: text-message-sprite_2
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 339
+        width: 119
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5359390fcf76ec040800000000000000
+      internalID: 4669784199695406389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: text-message-sprite_3
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 339
+        width: 105
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 970363399712c75b0800000000000000
+      internalID: -5369379849687912327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: text-message-sprite_4
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 282
+        width: 81
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7434b0d514c544880800000000000000
+      internalID: -8627669550331378873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: text-message-sprite_5
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 282
+        width: 151
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77a424d27e9e45d90800000000000000
+      internalID: -7109800732605134217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: text-message-sprite_6
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 282
+        width: 151
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfd9cab361004f510800000000000000
+      internalID: 1581889464604335611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: text-message-sprite_7
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 282
+        width: 82
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0691ed2cd7367f320800000000000000
+      internalID: 2591649502366407008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: text-message-sprite_8
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 225
+        width: 242
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed8c87e433007dc80800000000000000
+      internalID: -8298163568046978850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: text-message-sprite_9
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 224
+        width: 242
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0fe4e5fd41eae6a0800000000000000
+      internalID: -6419070593909068017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: text-message-sprite_10
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 139
+        width: 242
+        height: 74
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 26, y: 26, z: 26, w: 26}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40eb27d1aa3fd1fb0800000000000000
+      internalID: -4675312926176657916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: text-message-sprite_11
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 139
+        width: 242
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 456ffb96c960e5860800000000000000
+      internalID: 7520455696614159956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: text-message-sprite_12
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 31
+        width: 242
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b6054629ce80a690800000000000000
+      internalID: -7592911977165027655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: text-message-sprite_13
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 31
+        width: 242
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fabcdba3ef2ef0f0800000000000000
+      internalID: -1081374205634888974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4cf35daea2a5245839051aa0a7d8e964
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      text-message-sprite_0: -6882933633741700738
+      text-message-sprite_1: 7225583455248237038
+      text-message-sprite_10: -4675312926176657916
+      text-message-sprite_11: 7520455696614159956
+      text-message-sprite_12: -7592911977165027655
+      text-message-sprite_13: -1081374205634888974
+      text-message-sprite_2: 4669784199695406389
+      text-message-sprite_3: -5369379849687912327
+      text-message-sprite_4: -8627669550331378873
+      text-message-sprite_5: -7109800732605134217
+      text-message-sprite_6: 1581889464604335611
+      text-message-sprite_7: 2591649502366407008
+      text-message-sprite_8: -8298163568046978850
+      text-message-sprite_9: -6419070593909068017
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
