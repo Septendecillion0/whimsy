@@ -63,7 +63,7 @@ public class PhoneDialogue : MonoBehaviour
             bool lineDisplayed = false;
             story.Continue();
             
-            float delay = 3;
+            float delay = 5;
             dialogueState = DIALOGUE_OFF;
             yield return new WaitForSeconds(delay);
             dialogueState = WAIT_CONFIRM;
