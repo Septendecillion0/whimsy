@@ -54,7 +54,7 @@ public class Conversation : MonoBehaviour
     private void InterpretDialogue()
     {
 
-        StartCoroutine(DialogueDelay(3.0f));
+        StartCoroutine(DialogueDelay(7.0f));
         if (ink_story.canContinue)
         {
             next_line = ink_story.Continue();

@@ -47,7 +47,7 @@ MonoBehaviour:
   vampire: {fileID: 0}
   villager: {fileID: 0}
   landmark: {fileID: 0}
-  ink_json: {fileID: 4900000, guid: 0bdc09ac93aa9674c9ee855fac4b2a37, type: 3}
+  ink_json: {fileID: 4900000, guid: 459e6f296bddd74489100eaa6f9ef7b4, type: 3}
   conversation_started: 1
   conversation_ended: 0
   next_line: 
