@@ -30,7 +30,7 @@ public class PorchSceneUI : MonoBehaviour
     {
         //Debug.Log("Closing PorchSceneUI");
         GameStateManager.Instance.currentState = GameStateManager.GameState.Map;
-        this.gameObject.SetActive(false);
+        UIManager.Instance.HidePorchScene();
     }
 
     void Update()

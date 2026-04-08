@@ -62,7 +62,7 @@ public class PhoneDialogue : MonoBehaviour
             Debug.Log("continuing story");
             bool lineDisplayed = false;
             story.Continue();
-            
+
             float delay = 5;
             dialogueState = DIALOGUE_OFF;
             yield return new WaitForSeconds(delay);
@@ -84,14 +84,14 @@ public class PhoneDialogue : MonoBehaviour
             }
 
             if (dialogueState == WAIT_CHOICE)
-            {   
+            {
                 Debug.Log("displaying choices");
                 DisplayChoices();
             }
         }
 
         else if (dialogueState == WAIT_CHOICE)
-        {   
+        {
             Debug.Log("displaying choices");
             DisplayChoices();
         }
@@ -116,7 +116,7 @@ public class PhoneDialogue : MonoBehaviour
 
     void OnClickChoiceButton(Choice choice)
     {
-        
+
         story.ChooseChoiceIndex(choice.index);
         //DisplayLine(choice.text);
         //StartCoroutine(TypingDelay());
@@ -190,7 +190,7 @@ public class PhoneDialogue : MonoBehaviour
         return choice;
     }
 
-        // Destroys all the children of this gameobject (all the UI)
+    // Destroys all the children of this gameobject (all the UI)
     void RemoveChoices()
     {
 
@@ -217,10 +217,10 @@ public class PhoneDialogue : MonoBehaviour
         }
 
         if (story.canContinue && dialogueState != DIALOGUE_OFF && dialogueState != CHOICE_DISPLAYED && dialogueState != WAIT_CHOICE)
-            {
-                Debug.Log("update call");
-                StartCoroutine(ContinueDialogue());
-            }
+        {
+            Debug.Log("update call");
+            StartCoroutine(ContinueDialogue());
+        }
 
 
         // else if (Input.GetKeyDown(KeyCode.Return))

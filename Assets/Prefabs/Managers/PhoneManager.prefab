@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4255422446336957742
+--- !u!1 &2012191368994108264
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7904037475196867954}
-  - component: {fileID: 7956709567928273222}
+  - component: {fileID: 8239183115148413740}
+  - component: {fileID: 2245314690213944878}
   m_Layer: 0
-  m_Name: Conversation
+  m_Name: PhoneManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7904037475196867954
+--- !u!4 &8239183115148413740
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4255422446336957742}
+  m_GameObject: {fileID: 2012191368994108264}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 901.37384, y: 474.72083, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7956709567928273222
+--- !u!114 &2245314690213944878
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4255422446336957742}
+  m_GameObject: {fileID: 2012191368994108264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84b49f7bff2822b4dae22ddc97f84152, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b156c997d4e043fc8ce49e7e34b660a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Conversation
-  vampire: {fileID: 0}
-  villager: {fileID: 0}
-  landmark: {fileID: 0}
-  ink_json: {fileID: 4900000, guid: 459e6f296bddd74489100eaa6f9ef7b4, type: 3}
-  conversation_started: 0
-  conversation_ended: 0
-  next_line: 
-  vampire_history: []
-  villager_history: []
-  narration_history: []
+  m_EditorClassIdentifier: Assembly-CSharp::PhoneDialogue
+  inkAsset: {fileID: 4900000, guid: 35f49168171c545ac9b032d1c268012e, type: 3}
+  line: {fileID: 0}
+  buttonPrefab: {fileID: 5190485537709982499, guid: 9ba5a3e0730d5457fa9e275e9da1250a, type: 3}
+  dialogueOn: 0
+  choicesContainer: {fileID: 0}
+  textContainer: {fileID: 0}
+  textItemPrefab: {fileID: 8503829275581374595, guid: 2cb14f6a5348148f38cecde6ace8e6ee, type: 3}

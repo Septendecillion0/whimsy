@@ -25,7 +25,7 @@ public class SpawnManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StartCoroutine(SpawnLoop());
+        //StartCoroutine(SpawnLoop());
     }
 
     IEnumerator SpawnLoop()
@@ -37,7 +37,7 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    void SpawnEnemy()
+    public void SpawnEnemy()
     {
         // Pick random enemy prefab
         GameObject prefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];

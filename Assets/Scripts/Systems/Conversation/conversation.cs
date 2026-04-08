@@ -13,7 +13,7 @@ public class Conversation : MonoBehaviour
     public TextAsset ink_json;
     Story ink_story;
 
-    public bool conversation_started = true;
+    public bool conversation_started = false;
     public bool conversation_ended = false;
     bool delay_cooldown = false;
     public string next_line = "";
@@ -25,10 +25,10 @@ public class Conversation : MonoBehaviour
     void Awake()
     {
         ink_story = new Story(ink_json.text);
-        if (ink_story.canContinue)
-        {
-            InterpretDialogue();
-        }
+        // if (ink_story.canContinue)
+        // {
+        //     InterpretDialogue();
+        // }
     }
 
     // Update is called once per frame
@@ -36,12 +36,14 @@ public class Conversation : MonoBehaviour
     {
         if (conversation_started && !delay_cooldown && !conversation_ended)
         {
+            Debug.Log("Reaching InterpretDialogue from Update");
             InterpretDialogue();
         }
     }
 
     public void StartConversation()
     {
+        Debug.Log("StartConversation was called");
         conversation_started = true;
         //Debug.Log("Conversation started");
     }
@@ -53,6 +55,8 @@ public class Conversation : MonoBehaviour
 
     private void InterpretDialogue()
     {
+        Debug.Log("Reaching InterpretDialogue");
+
 
         StartCoroutine(DialogueDelay(7.0f));
         if (ink_story.canContinue)

@@ -10,6 +10,8 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance;
 
     public GameObject PorchSceneUI;
+    public GameObject MapUI;
+    public GameObject EndOfDayReportUI;
     public GameObject MessagePanel;
     private bool message_displaying = false;
     public List<string> message_queue = new List<string>();
@@ -50,9 +52,34 @@ public class UIManager : MonoBehaviour
         // }
     }
 
+    public void HidePorchScene()
+    {
+        PorchSceneUI.SetActive(false);
+        MapUI.SetActive(true);
+    }
+
     public void ShowPorchScene()
     {
         PorchSceneUI.SetActive(true);
+        MapUI.SetActive(false);
+        if (ConversationManager.Instance.selected_conversation != null && !ConversationManager.Instance.selected_conversation.conversation_started)
+        {
+            ConversationManager.Instance.selected_conversation.StartConversation();
+        }
+    }
+
+    public void ShowEndOfDayReport()
+    {
+        EndOfDayReportUI.GetComponent<ReportCard>().UpdateValues();
+        EndOfDayReportUI.SetActive(true);
+        PorchSceneUI.SetActive(false);
+        MapUI.SetActive(false);
+    }
+
+    public void HideEndOfDayReport()
+    {
+        EndOfDayReportUI.SetActive(false);
+        MapUI.SetActive(true);
     }
 
     public void SendMessage(string message, Color? color = null)

@@ -6,7 +6,8 @@ public class GameStateManager : MonoBehaviour
     public enum GameState
     {
         Map,
-        Dialogue
+        Dialogue,
+        EndOfDay
     }
 
     public GameState currentState;

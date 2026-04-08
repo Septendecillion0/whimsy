@@ -42,15 +42,6 @@ public class ConversationManager : MonoBehaviour
         landmark.SetConversation(new_conversation);
     }
 
-    public void TEST_CreateConversationInTestScene()
-    {
-        //Debug.Log("Conversation created");
-        GameObject new_conversation_prefab = Instantiate(conversation_prefab);
-        Conversation new_conversation = new_conversation_prefab.GetComponent<Conversation>();
-        new_conversation.transform.SetParent(transform, false);
-        selected_conversation = new_conversation;
-    }
-
     public Conversation GetSelectedConversation()
     {
         return selected_conversation;
