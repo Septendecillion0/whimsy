@@ -27,7 +27,6 @@ public class Conversation : MonoBehaviour
         ink_story = new Story(ink_json.text);
         if (ink_story.canContinue)
         {
-            next_line = ink_story.Continue();
             InterpretDialogue();
         }
     }
@@ -37,17 +36,7 @@ public class Conversation : MonoBehaviour
     {
         if (conversation_started && !delay_cooldown)
         {
-            StartCoroutine(DialogueDelay(3.0f));
-            //Debug.Log(next_line);
-            if (ink_story.canContinue)
-            {
-                next_line = ink_story.Continue();
-                InterpretDialogue();
-            }
-            else
-            {
-                conversation_started = false;
-            }
+            InterpretDialogue();
         }
     }
 
@@ -64,6 +53,17 @@ public class Conversation : MonoBehaviour
 
     private void InterpretDialogue()
     {
+
+        StartCoroutine(DialogueDelay(3.0f));
+        if (ink_story.canContinue)
+        {
+            next_line = ink_story.Continue();
+        }
+        else
+        {
+            conversation_started = false;
+        }
+
         List<string> tags = ink_story.currentTags;
         if (tags.Contains("VAMPIRE"))
         {
