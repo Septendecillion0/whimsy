@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using System.Collections;
+using UnityEngine.UI;
 /// <summary>
 /// Landmark is a subclass of Checkpoint
 /// represents a house/car/location where interactions and encounters will take place (rather than just a pathing node)
@@ -12,6 +14,8 @@ public class Landmark : Checkpoint, IPointerClickHandler
     // TODO: replace with Resident monobehavior once implemented
     public GameObject resident;
     public VampireAttributes vampire;
+
+    public GameObject event_progress;
     public enum LandmarkType
     {
         House,
@@ -32,6 +36,11 @@ public class Landmark : Checkpoint, IPointerClickHandler
             Debug.LogWarning("Landmark requires a Collider2D to be clickable!");
     }
 
+    void Start()
+    {
+
+    }
+
     private void Update()
     {
         if ((!active) || (GameStateManager.Instance.currentState != GameStateManager.GameState.Map)) return;
@@ -39,6 +48,7 @@ public class Landmark : Checkpoint, IPointerClickHandler
         if (conversation.conversation_ended)
         {
             transform.Find("EventWarningSign").gameObject.SetActive(false);
+            event_progress.gameObject.SetActive(false);
         }
 
         // Detect left mouse button
@@ -71,12 +81,32 @@ public class Landmark : Checkpoint, IPointerClickHandler
         UIManager.Instance.ShowPorchScene();
     }
 
+    IEnumerator UpdateProgressIcon()
+    {
+        transform.Find("EventWarningSign").gameObject.SetActive(true);
+        event_progress.gameObject.SetActive(true);
+        Debug.Log(event_progress.name);
+        Image progress_icon = event_progress.GetComponent<Image>();
+        while (!conversation.conversation_started)
+        {
+            //TODO: Implement editable duration logic
+            progress_icon.fillAmount -= 0.001f;
+            yield return new WaitForSeconds(0.05f);
+            if (progress_icon.fillAmount <= 0.0f)
+            {
+                // TODO: Start and finish conversation if event expires
+                Debug.Log("Event Expired");
+            }
+        }
+        event_progress.gameObject.SetActive(false);
+    }
+
     // Called by ConversationManager when a conversation is created
     // allows the landmark to be clicked on
     public void SetConversation(Conversation new_conversation)
     {
         active = true;
         conversation = new_conversation;
-        transform.Find("EventWarningSign").gameObject.SetActive(true);
+        StartCoroutine(UpdateProgressIcon());
     }
 }

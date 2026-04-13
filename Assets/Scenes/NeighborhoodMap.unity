@@ -3614,7 +3614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22f2d29a983aa4944bf64e165276f9e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DayCycleManager
-  total_daily_encounters: 3
+  total_daily_encounters: 0
   spawnInterval: 5
 --- !u!1 &949882298
 GameObject:
