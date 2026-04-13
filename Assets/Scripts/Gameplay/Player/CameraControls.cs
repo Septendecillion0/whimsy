@@ -15,6 +15,11 @@ public class CameraControls : MonoBehaviour
     public float minFOV = 10f;
     public float maxFOV = 170f;
 
+    public float minX = -20f;
+    public float maxX = 20f;
+    public float minY = -20f;
+    public float maxY = 20f;
+
     private void Awake()
     {
         mainCamera = Camera.main;
@@ -83,6 +88,7 @@ public class CameraControls : MonoBehaviour
 
         offset = GetMousePosition() - transform.position;
         transform.position = origin - offset;
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, minX, maxX), Mathf.Clamp(transform.position.y, minY, maxY), transform.position.z);
 
     }
 
