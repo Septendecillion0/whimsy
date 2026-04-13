@@ -69,6 +69,12 @@ public class PorchSceneUI : MonoBehaviour
         ConversationManager.Instance.selected_conversation.Report();
     }
 
+    public void OnRecordButtonClicked()
+    {
+        ConversationManager.Instance.selected_conversation.conversation_recorded = true;
+        UIManager.Instance.SendMessage("Encounter recorded!", Color.green);
+    }
+
     public void OnCombustButtonClicked()
     {
         ConversationManager.Instance.selected_conversation.Combust();

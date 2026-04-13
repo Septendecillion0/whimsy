@@ -15,8 +15,10 @@ public class Conversation : MonoBehaviour
 
     public bool conversation_started = false;
     public bool conversation_ended = false;
+    public bool conversation_recorded = false;
     bool delay_cooldown = false;
     public string next_line = "";
+
 
     public List<string> vampire_history = new List<string>();
     public List<string> villager_history = new List<string>();
@@ -25,10 +27,6 @@ public class Conversation : MonoBehaviour
     void Awake()
     {
         ink_story = new Story(ink_json.text);
-        // if (ink_story.canContinue)
-        // {
-        //     InterpretDialogue();
-        // }
     }
 
     // Update is called once per frame
@@ -48,9 +46,40 @@ public class Conversation : MonoBehaviour
         //Debug.Log("Conversation started");
     }
 
+    public void UpdateScore()
+    {
+        ScoreManager.Instance.encounter_count++;
+        if (vampire.violation)
+        {
+            ScoreManager.Instance.total_violations++;
+        }
+        if (vampire.reported)
+        {
+            if (vampire.violation)
+            {
+                ScoreManager.Instance.correct_reports++;
+            }
+            else
+            {
+                ScoreManager.Instance.incorrect_reports++;
+            }
+        }
+        if (villager == null)
+        {
+            ScoreManager.Instance.villagers_lost++;
+        }
+        if (conversation_recorded)
+        {
+            ScoreManager.Instance.vampires_recorded++;
+        }
+
+    }
+
     public void OnConversationEnd()
     {
-        // TODO: Add logic to send vampire to next landmark
+        conversation_ended = true;
+        UpdateScore();
+        SendVampireAway();
     }
 
     private void InterpretDialogue()
@@ -85,20 +114,24 @@ public class Conversation : MonoBehaviour
 
         if (tags.Contains("VIOLATION"))
         {
-            vampire.violation = true;
+            if (!vampire.violation)
+            {
+                vampire.violation = true;
+            }
+
         }
 
         if (tags.Contains("VAMPIRE_HUNTS"))
         {
 
             Debug.Log("Vampire devours the victim");
-            villager = null;
-            SendVampireAway();
             UIManager.Instance.SendMessage("A villager has been devoured!", Color.red);
+            villager = null;
+            OnConversationEnd();
         }
         if (tags.Contains("VAMPIRE_LEAVES"))
         {
-            SendVampireAway();
+            OnConversationEnd();
         }
 
     }
@@ -110,7 +143,6 @@ public class Conversation : MonoBehaviour
         //Debug.Log(Find("Exit").name);
         vampire.GetComponent<VampirePathing>().SetNewDestination(GameObject.Find("Exit").GetComponent<Checkpoint>());
         vampire = null;
-        conversation_ended = true;
     }
 
     public void Report()
