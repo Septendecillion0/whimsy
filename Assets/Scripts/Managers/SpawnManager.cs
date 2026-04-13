@@ -65,7 +65,8 @@ public class SpawnManager : MonoBehaviour
         VampireAttributes attributes = enemy.GetComponent<VampireAttributes>();
         vampire_dialogue dialogue = enemy.GetComponent<vampire_dialogue>();
 
-        enemy.GetComponent<SpriteRenderer>().color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+        //enemy.GetComponent<SpriteRenderer>().color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+        enemy.transform.Find("Hat").GetComponent<SpriteRenderer>().color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
 
         // Pick random checkpoints
         Checkpoint start = GetRandomCheckpoint(spawnPoints);
