@@ -79,6 +79,7 @@ public class Conversation : MonoBehaviour
     {
         conversation_ended = true;
         UpdateScore();
+        DayCycleManager.Instance.OnEncounterCompleted();
         SendVampireAway();
     }
 

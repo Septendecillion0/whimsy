@@ -7,6 +7,9 @@ using System.Collections.Generic;
 /// </summary>
 public class SpawnManager : MonoBehaviour
 {
+
+    public static SpawnManager Instance;
+
     [Header("References")]
     [Header("Path")]
     public Path path;
@@ -19,8 +22,20 @@ public class SpawnManager : MonoBehaviour
     [Header("Enemy Prefabs")]
     public List<GameObject> enemyPrefabs;
 
-    [Header("Spawn Settings")]
-    public float spawnInterval = 10f;
+    //[Header("Spawn Settings")]
+    //public float spawnInterval = 10f;
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject); // Prevent duplicate managers
+        }
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,14 +43,14 @@ public class SpawnManager : MonoBehaviour
         //StartCoroutine(SpawnLoop());
     }
 
-    IEnumerator SpawnLoop()
-    {
-        while (true)
-        {
-            SpawnEnemy();
-            yield return new WaitForSeconds(spawnInterval);
-        }
-    }
+    // IEnumerator SpawnLoop()
+    // {
+    //     while (true)
+    //     {
+    //         SpawnEnemy();
+    //         yield return new WaitForSeconds(spawnInterval);
+    //     }
+    // }
 
     public void SpawnEnemy()
     {
