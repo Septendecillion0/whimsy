@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4255422446336957742
+--- !u!1 &831986707771961751
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,50 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7904037475196867954}
-  - component: {fileID: 7956709567928273222}
+  - component: {fileID: 6945387064595922636}
+  - component: {fileID: 8788514196310229305}
   m_Layer: 0
-  m_Name: Conversation
+  m_Name: DayCycleManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7904037475196867954
+--- !u!4 &6945387064595922636
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4255422446336957742}
+  m_GameObject: {fileID: 831986707771961751}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 901.37384, y: 474.72083, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7956709567928273222
+--- !u!114 &8788514196310229305
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4255422446336957742}
+  m_GameObject: {fileID: 831986707771961751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84b49f7bff2822b4dae22ddc97f84152, type: 3}
+  m_Script: {fileID: 11500000, guid: 22f2d29a983aa4944bf64e165276f9e0, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Conversation
-  vampire: {fileID: 0}
-  villager: {fileID: 0}
-  landmark: {fileID: 0}
-  ink_json: {fileID: 4900000, guid: 459e6f296bddd74489100eaa6f9ef7b4, type: 3}
-  conversation_started: 0
-  conversation_ended: 0
-  conversation_recorded: 0
-  next_line: 
-  vampire_history: []
-  villager_history: []
-  narration_history: []
+  m_EditorClassIdentifier: Assembly-CSharp::DayCycleManager
+  total_daily_encounters: 0
+  spawnInterval: 5

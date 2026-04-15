@@ -14,6 +14,7 @@ public class Landmark : Checkpoint, IPointerClickHandler
     // TODO: replace with Resident monobehavior once implemented
     public GameObject resident;
     public VampireAttributes vampire;
+    public float event_warning_duration = 10f;
 
     public GameObject event_progress;
     public enum LandmarkType
@@ -76,6 +77,8 @@ public class Landmark : Checkpoint, IPointerClickHandler
 
     public void OnLandmarkClicked()
     {
+        event_progress.gameObject.SetActive(false);
+        transform.Find("EventWarningSign").gameObject.SetActive(false);
         GameStateManager.Instance.SetState(GameStateManager.GameState.Dialogue);
         ConversationManager.Instance.SetSelectedConversation(conversation);
         UIManager.Instance.ShowPorchScene();
@@ -87,18 +90,28 @@ public class Landmark : Checkpoint, IPointerClickHandler
         event_progress.gameObject.SetActive(true);
         Debug.Log(event_progress.name);
         Image progress_icon = event_progress.GetComponent<Image>();
-        while (!conversation.conversation_started)
+
+
+        float elapsed_time = 0f;
+        while (elapsed_time < event_warning_duration)
         {
-            //TODO: Implement editable duration logic
-            progress_icon.fillAmount -= 0.001f;
-            yield return new WaitForSeconds(0.05f);
-            if (progress_icon.fillAmount <= 0.0f)
-            {
-                // TODO: Start and finish conversation if event expires
-                Debug.Log("Event Expired");
-            }
+            elapsed_time += Time.deltaTime;
+            // Sets value between 0 and 1
+            progress_icon.fillAmount = 1f - (elapsed_time / event_warning_duration);
+            yield return null;
         }
+
+        if (!conversation.conversation_started)
+        {
+            Debug.Log("Event Expired");
+            conversation.StartConversation();
+            active = false;
+            transform.Find("EventWarningSign").gameObject.SetActive(false);
+        }
+
         event_progress.gameObject.SetActive(false);
+
+
     }
 
     // Called by ConversationManager when a conversation is created
