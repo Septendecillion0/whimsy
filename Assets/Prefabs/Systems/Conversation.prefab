@@ -50,7 +50,9 @@ MonoBehaviour:
   ink_json: {fileID: 4900000, guid: 459e6f296bddd74489100eaa6f9ef7b4, type: 3}
   conversation_started: 0
   conversation_ended: 0
+  conversation_recorded: 0
   next_line: 
   vampire_history: []
   villager_history: []
   narration_history: []
+  documentAnimator: {fileID: 1229154955545902955, guid: 9b58665ebb771400bbd3d8867aaddfdd, type: 3}

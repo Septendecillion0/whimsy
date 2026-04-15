@@ -13,9 +13,13 @@ public class UIManager : MonoBehaviour
     public GameObject MapUI;
     public GameObject EndOfDayReportUI;
     public GameObject MessagePanel;
+    public GameObject Document;
+    private Animator documentAnimator;
     private bool message_displaying = false;
     public List<string> message_queue = new List<string>();
     public List<Color> message_colors = new List<Color>();
+
+
 
     //private int TEST_counter = 0;
 
@@ -30,6 +34,13 @@ public class UIManager : MonoBehaviour
             Destroy(gameObject); // Prevent duplicate managers
         }
     }
+
+    void Start()
+    {
+        Document = GameObject.Find("/Scene/UICanvas/Document");
+        documentAnimator = Document.GetComponent<Animator>();
+    }
+
 
     void Update()
     {
@@ -50,6 +61,17 @@ public class UIManager : MonoBehaviour
         //     SendMessage("Message " + TEST_counter, Color.orange);
         //     TEST_counter++;
         // }
+    }
+
+    public void DisplayDocument()
+    {
+        documentAnimator.SetTrigger("DocumentDisplayed");
+    }
+
+    public void CloseDocument()
+    {
+        documentAnimator.SetTrigger("DocumentClosed");
+        ConversationManager.Instance.selected_conversation.conversation_paused = false;
     }
 
     public void HidePorchScene()

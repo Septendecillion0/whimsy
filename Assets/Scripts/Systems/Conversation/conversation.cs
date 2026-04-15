@@ -24,15 +24,32 @@ public class Conversation : MonoBehaviour
     public List<string> villager_history = new List<string>();
     public List<string> narration_history = new List<string>();
 
+    private GameObject document;
+    private Animator documentAnimator;
+    public bool conversation_paused;
+    //public GameObject document;
+
     void Awake()
     {
+        //documentAnimator = documentAnimator.GetComponent<Animator>();
         ink_story = new Story(ink_json.text);
+    }
+
+    void Start()
+    {
+        document = GameObject.Find("/Scene/UICanvas/Document");
+        documentAnimator = document.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (conversation_started && !delay_cooldown && !conversation_ended)
+        if (conversation_paused)
+        {
+            return;
+        }
+
+        else if (conversation_started && !delay_cooldown && !conversation_ended)
         {
             Debug.Log("Reaching InterpretDialogue from Update");
             InterpretDialogue();
@@ -42,6 +59,7 @@ public class Conversation : MonoBehaviour
     public void StartConversation()
     {
         Debug.Log("StartConversation was called");
+        //documentAnimator.SetTrigger("DocumentDisplayed");
         conversation_started = true;
         //Debug.Log("Conversation started");
     }
@@ -134,6 +152,13 @@ public class Conversation : MonoBehaviour
         {
             OnConversationEnd();
         }
+
+        if (tags.Contains("FAKE_WARRANT"))
+        {
+            UIManager.Instance.DisplayDocument();
+            conversation_paused = true;
+        }
+
 
     }
 
