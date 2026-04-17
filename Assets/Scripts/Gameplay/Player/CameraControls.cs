@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class CameraControls : MonoBehaviour
 {
@@ -28,15 +29,28 @@ public class CameraControls : MonoBehaviour
 
     public void OnZoom(InputAction.CallbackContext context)
     {
+        if (EventSystem.current.IsPointerOverGameObject(PointerInputModule.kMouseLeftId))
+        {
+            return;
+        }
         if (context.started)
         {
             float newSize = mainCamera.orthographicSize - context.ReadValue<Vector2>().y * zoomSpeed * Time.deltaTime;
             mainCamera.orthographicSize = Mathf.Clamp(newSize, minFOV, maxFOV);
 
         }
+
     }
     public void OnDrag(InputAction.CallbackContext context)
     {
+        if (context.canceled)
+        {
+            isDragging = false;
+        }
+        if (EventSystem.current.IsPointerOverGameObject(PointerInputModule.kMouseLeftId))
+        {
+            return;
+        }
         if (context.started)
         {
             origin = GetMousePosition();
