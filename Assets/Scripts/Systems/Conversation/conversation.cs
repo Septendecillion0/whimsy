@@ -39,6 +39,13 @@ public class Conversation : MonoBehaviour
     {
         document = GameObject.Find("/Scene/UICanvas/Document");
         documentAnimator = document.GetComponent<Animator>();
+        // Used to fetch sequential conversations as set in Level Data for scripted version (will grab next knot in sequence)
+        //ink_story.ChoosePathString(LevelManager.Instance.GetNextConversation());
+
+        // Used to fetch random conversations for non-scripted version (will grab random knot from Level Data)
+        ink_story.ChoosePathString(LevelManager.Instance.GetRandomConversation());
+
+
     }
 
     // Update is called once per frame

@@ -1026,6 +1026,7 @@ Transform:
   - {fileID: 1344164965}
   - {fileID: 7395404216657135525}
   - {fileID: 947551474}
+  - {fileID: 919911957}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &269327517
@@ -4046,6 +4047,11 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!4 &919911957 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6350409233216633574, guid: a7c43da269cb83d48a4eeb7776d898ec, type: 3}
+  m_PrefabInstance: {fileID: 352203626183391064}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &923427412 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2016764759332946589, guid: db47a9aee2f1fe249995da0c1999b555, type: 3}
@@ -7942,7 +7948,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 262710916}
     m_Modifications:
     - target: {fileID: 4616727366321183218, guid: a7c43da269cb83d48a4eeb7776d898ec, type: 3}
       propertyPath: m_Name
@@ -7950,11 +7956,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6350409233216633574, guid: a7c43da269cb83d48a4eeb7776d898ec, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.4477
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6350409233216633574, guid: a7c43da269cb83d48a4eeb7776d898ec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.56067
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6350409233216633574, guid: a7c43da269cb83d48a4eeb7776d898ec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7987,6 +7993,18 @@ PrefabInstance:
     - target: {fileID: 6350409233216633574, guid: a7c43da269cb83d48a4eeb7776d898ec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8298706105437373218, guid: a7c43da269cb83d48a4eeb7776d898ec, type: 3}
+      propertyPath: levelData
+      value: 
+      objectReference: {fileID: 11400000, guid: c4e82048bc378fb48a1b410c17f6037f, type: 2}
+    - target: {fileID: 8298706105437373218, guid: a7c43da269cb83d48a4eeb7776d898ec, type: 3}
+      propertyPath: encounter_count
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8298706105437373218, guid: a7c43da269cb83d48a4eeb7776d898ec, type: 3}
+      propertyPath: currentLevelIndex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8479,7 +8497,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 1320061506}
   - {fileID: 262710916}
-  - {fileID: 352203626183391064}
   - {fileID: 712697996}
   - {fileID: 1858813117}
   - {fileID: 1731493853}

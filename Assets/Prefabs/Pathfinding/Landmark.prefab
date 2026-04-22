@@ -144,6 +144,7 @@ MonoBehaviour:
   - {fileID: 0}
   resident: {fileID: 0}
   vampire: {fileID: 0}
+  event_warning_duration: 120
   event_progress: {fileID: 6725033754398034030}
 --- !u!61 &6431565082735033417
 BoxCollider2D:

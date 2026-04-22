@@ -1,21 +1,52 @@
 using UnityEngine;
+using TMPro;
 using System.Collections;
 using System.Collections.Generic;
 
 public class DayCycleManager : MonoBehaviour
 {
 
-    public static DayCycleManager Instance;
+    [SerializeField] public TextMeshProUGUI timeDisplay;
+    public float remainingTime = 90f;
+    private bool day_ended = false;
 
-    public int total_daily_encounters = 0;
+    public static DayCycleManager Instance;
+    private int total_daily_encounters = 0;
     public float spawnInterval = 10f;
     private int encounters_started = 0;
     private int encounters_completed = 0;
 
 
+
     void Start()
     {
+        total_daily_encounters = LevelManager.Instance.levelData.level_conversations.Length;
         StartCoroutine(SpawnEncounterLoop());
+    }
+
+    void Update()
+    {
+        if (!day_ended)
+        {
+            if (remainingTime > 0)
+            {
+                remainingTime -= Time.deltaTime;
+            }
+
+            else if (remainingTime <= 0)
+            {
+                day_ended = true;
+                StartCoroutine(EndDay());
+            }
+
+            int minutes = Mathf.FloorToInt(remainingTime / 60);
+            int seconds = Mathf.FloorToInt(remainingTime % 60);
+            timeDisplay.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        }
+
+
+
+
     }
 
     public void OnEncounterCompleted()
@@ -41,7 +72,7 @@ public class DayCycleManager : MonoBehaviour
 
     IEnumerator SpawnEncounterLoop()
     {
-        while (encounters_started < total_daily_encounters)
+        while (encounters_started < total_daily_encounters && GameStateManager.Instance.currentState != GameStateManager.GameState.EndOfDay)
         {
             yield return new WaitForSeconds(spawnInterval);
             SpawnManager.Instance.SpawnEnemy();
@@ -53,9 +84,10 @@ public class DayCycleManager : MonoBehaviour
     IEnumerator EndDay()
     {
         Debug.Log("End of Day triggered");
-        yield return new WaitForSeconds(5f);
+        //yield return new WaitForSeconds(5f);
         Debug.Log("Day ended");
         UIManager.Instance.ShowEndOfDayReport();
         GameStateManager.Instance.SetState(GameStateManager.GameState.EndOfDay);
+        yield return null;
     }
 }
