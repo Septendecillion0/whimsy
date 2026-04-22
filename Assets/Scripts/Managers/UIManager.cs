@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     public GameObject EndOfDayReportUI;
     public GameObject MessagePanel;
     public GameObject Document;
+    public GameObject PrologueScreen;
     private Animator documentAnimator;
     private bool message_displaying = false;
     public List<string> message_queue = new List<string>();
