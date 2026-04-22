@@ -8,7 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 public class PhoneDialogue : MonoBehaviour
 {
-    //public static DialogueManager dialogueManager;
+    public phone_screen phone_screen_script;
     public TextAsset inkAsset;
     public TMP_Text line;
     public Button buttonPrefab = null;
@@ -16,6 +16,10 @@ public class PhoneDialogue : MonoBehaviour
     public Transform choicesContainer;
     public Transform textContainer;
     public GameObject textItemPrefab;
+
+    public int notifications;
+    public GameObject notificationBanner;
+    public GameObject notificationBackground;
 
     private int dialogueState = 0;
     private int DIALOGUE_OFF = 0;
@@ -36,11 +40,11 @@ public class PhoneDialogue : MonoBehaviour
         StartDialogue();
     }
 
-    public void StartGame()
-    {
-        StartDialogue();
-    }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // public void StartGame()
+    // {
+    //     StartDialogue();
+    // }
+    
     void LoadDialogues()
     {
         story = new Story(inkAsset.text);
@@ -135,6 +139,16 @@ public class PhoneDialogue : MonoBehaviour
 
     void DisplayLine(string txt)
     {
+        notifications ++;
+        TMP_Text notificationText = notificationBackground.GetComponentInChildren<TMP_Text>();
+        if (notifications == 1)
+        {
+            notificationText.text = notifications + " new message";
+        }
+        else
+        {
+            notificationText.text = notifications + " new messages";
+        }
         Debug.Log("displaying line");
         txt = txt.Trim();
 
@@ -207,6 +221,28 @@ public class PhoneDialogue : MonoBehaviour
 
     private void Update()
     {
+        // set notifs back to zero after phone is opened and remove notification banner
+        if (phone_screen_script.is_open == true)
+        {
+            Debug.Log("reset notifications");
+            notificationBackground.SetActive(false);
+            notifications = 0;
+        }
+
+        if (phone_screen_script.is_open == false && phone_screen_script.is_moving == false)
+        {
+            notificationBackground.SetActive(true);
+            if (notifications > 0)
+            {
+                notificationBanner.SetActive(true);
+            }
+
+            else
+            {
+                notificationBanner.SetActive(false);
+            }
+        }
+
         if (dialogueState == CHOICE_DISPLAYED)
         {
             if (EventSystem.current.currentSelectedGameObject == null)
