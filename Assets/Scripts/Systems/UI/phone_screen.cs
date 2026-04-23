@@ -56,7 +56,7 @@ public class phone_screen : MonoBehaviour, IPointerClickHandler
     public void ClosePhoneView()
     {
         is_open = false;
-        StartCoroutine(MoveAndScalePhone(new Vector2(600, -700), new Vector2(1, 1)));
+        StartCoroutine(MoveAndScalePhone(new Vector2(600, -760), new Vector2(1, 1)));
     }
 
     private IEnumerator MoveAndScalePhone(Vector2 target_position, Vector2 target_scale)

@@ -14,15 +14,18 @@ public class tutorial_document : MonoBehaviour, IPointerClickHandler
 
     public GameObject pages;
     public int current_page = 0;
-    private GameObject[] page_list;
+    private List<GameObject> page_list = new List<GameObject>();
 
     private static readonly List<RaycastResult> _raycastResults = new List<RaycastResult>();
 
-    // void Start()
-    // {
-    //     uiElement = gameObject.GetComponent<RectTransform>();
-    //     page_list = pages.GetComponentsInChildren<GameObject>();
-    // }
+    void Start()
+    {
+        uiElement = gameObject.GetComponent<RectTransform>();
+        foreach (Transform child in pages.transform)
+        {
+            page_list.Add(child.gameObject);
+        }
+    }
 
     void Update()
     {
@@ -52,6 +55,7 @@ public class tutorial_document : MonoBehaviour, IPointerClickHandler
         }
         return false;
     }
+
     public void OpenPhoneView()
     {
         is_open = true;
@@ -93,16 +97,16 @@ public class tutorial_document : MonoBehaviour, IPointerClickHandler
 
     public void next_page()
     {
-        // page_list[current_page].SetActive(false);
-        // current_page = (current_page + 1) % page_list.Length;
-        // page_list[current_page].SetActive(true);
+        pages.transform.GetChild(current_page).gameObject.SetActive(false);
+        current_page = (current_page + 1) % pages.transform.childCount;
+        pages.transform.GetChild(current_page).gameObject.SetActive(true);
     }
 
     public void previous_page()
     {
-        // page_list[current_page].SetActive(false);
-        // current_page = (current_page - 1 + page_list.Length) % page_list.Length;
-        // page_list[current_page].SetActive(true);
+        pages.transform.GetChild(current_page).gameObject.SetActive(false);
+        current_page = (current_page - 1 + pages.transform.childCount) % pages.transform.childCount;
+        pages.transform.GetChild(current_page).gameObject.SetActive(true);
     }
 
 }

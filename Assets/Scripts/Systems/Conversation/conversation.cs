@@ -160,7 +160,7 @@ public class Conversation : MonoBehaviour
             OnConversationEnd();
         }
 
-        if (tags.Contains("WARRANT"))
+        if (tags.Contains("DISPLAY_WARRANT"))
         {
             UIManager.Instance.DisplayDocument();
             conversation_paused = true;
