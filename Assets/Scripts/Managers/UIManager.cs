@@ -20,6 +20,8 @@ public class UIManager : MonoBehaviour
     public List<string> message_queue = new List<string>();
     public List<Color> message_colors = new List<Color>();
 
+    public TMP_Text houseOwnerText;
+
 
 
     //private int TEST_counter = 0;

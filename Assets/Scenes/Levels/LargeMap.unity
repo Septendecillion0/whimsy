@@ -313,6 +313,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1354917186}
     - target: {fileID: 9210655788798102776, guid: 77d1a734873fba649b14bde7ecef694a, type: 3}
+      propertyPath: houseAddress
+      value: 55 Nosferatu Street
+      objectReference: {fileID: 0}
+    - target: {fileID: 9210655788798102776, guid: 77d1a734873fba649b14bde7ecef694a, type: 3}
+      propertyPath: residentName
+      value: Shawn Nelson
+      objectReference: {fileID: 0}
+    - target: {fileID: 9210655788798102776, guid: 77d1a734873fba649b14bde7ecef694a, type: 3}
       propertyPath: neighbors.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -2604,14 +2612,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2086277343}
     m_Modifications:
-    - target: {fileID: 945487435439426852, guid: 6ebfcebb597f04a49958949cfdd3e004, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 2079
-      objectReference: {fileID: 0}
-    - target: {fileID: 945487435439426852, guid: 6ebfcebb597f04a49958949cfdd3e004, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -124
-      objectReference: {fileID: 0}
     - target: {fileID: 996566097568862390, guid: 6ebfcebb597f04a49958949cfdd3e004, type: 3}
       propertyPath: m_Name
       value: PorchView
@@ -2624,37 +2624,13 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 61.21
       objectReference: {fileID: 0}
-    - target: {fileID: 2908906099451439229, guid: 6ebfcebb597f04a49958949cfdd3e004, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -580
-      objectReference: {fileID: 0}
     - target: {fileID: 3213861676775080892, guid: 6ebfcebb597f04a49958949cfdd3e004, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2007880532}
-    - target: {fileID: 3213861676775080892, guid: 6ebfcebb597f04a49958949cfdd3e004, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CloseDocument
-      objectReference: {fileID: 0}
-    - target: {fileID: 3536922550892205964, guid: 6ebfcebb597f04a49958949cfdd3e004, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 107.1428
-      objectReference: {fileID: 0}
-    - target: {fileID: 3536922550892205964, guid: 6ebfcebb597f04a49958949cfdd3e004, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -780.3501
-      objectReference: {fileID: 0}
-    - target: {fileID: 5061983875599381980, guid: 6ebfcebb597f04a49958949cfdd3e004, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -538
-      objectReference: {fileID: 0}
     - target: {fileID: 6787885528419791511, guid: 6ebfcebb597f04a49958949cfdd3e004, type: 3}
       propertyPath: m_SizeDelta.y
       value: 61.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 6787885528419791511, guid: 6ebfcebb597f04a49958949cfdd3e004, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -181
       objectReference: {fileID: 0}
     - target: {fileID: 7064621471748318003, guid: 6ebfcebb597f04a49958949cfdd3e004, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2741,10 +2717,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 3133061733282281102, guid: 6ebfcebb597f04a49958949cfdd3e004, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6958748132325105021, guid: 6ebfcebb597f04a49958949cfdd3e004, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 521782185}
   m_SourcePrefab: {fileID: 100100000, guid: 6ebfcebb597f04a49958949cfdd3e004, type: 3}
 --- !u!224 &521782181 stripped
 RectTransform:
@@ -2756,6 +2734,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6958748132325105021, guid: 6ebfcebb597f04a49958949cfdd3e004, type: 3}
   m_PrefabInstance: {fileID: 521782180}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &521782185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521782182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e77fd0d4975624b67b9ed8c5f4e28458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  searchWarrantText: {fileID: 0}
+  warrantName: {fileID: 0}
+  warrantAddress: {fileID: 0}
+  warrantSignature: {fileID: 0}
+  warrantDate: {fileID: 0}
 --- !u!1 &549079599
 GameObject:
   m_ObjectHideFlags: 0
@@ -3098,6 +3093,14 @@ PrefabInstance:
       propertyPath: resident
       value: 
       objectReference: {fileID: 1354917186}
+    - target: {fileID: 9210655788798102776, guid: 77d1a734873fba649b14bde7ecef694a, type: 3}
+      propertyPath: houseAddress
+      value: 68 Bloodbag Drive
+      objectReference: {fileID: 0}
+    - target: {fileID: 9210655788798102776, guid: 77d1a734873fba649b14bde7ecef694a, type: 3}
+      propertyPath: residentName
+      value: Lara Boone
+      objectReference: {fileID: 0}
     - target: {fileID: 9210655788798102776, guid: 77d1a734873fba649b14bde7ecef694a, type: 3}
       propertyPath: 'neighbors.Array.data[0]'
       value: 
@@ -5811,6 +5814,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1354917186}
     - target: {fileID: 7357706931948608268, guid: 75b8f4af06242214fb50aae008f42173, type: 3}
+      propertyPath: houseAddress
+      value: 56 Nosferatu Street
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357706931948608268, guid: 75b8f4af06242214fb50aae008f42173, type: 3}
+      propertyPath: residentName
+      value: Evelyn McGrath
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357706931948608268, guid: 75b8f4af06242214fb50aae008f42173, type: 3}
       propertyPath: 'neighbors.Array.data[0]'
       value: 
       objectReference: {fileID: 2124863663}
@@ -6186,6 +6197,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1354917186}
     - target: {fileID: 7357706931948608268, guid: 75b8f4af06242214fb50aae008f42173, type: 3}
+      propertyPath: houseAddress
+      value: 15 Alucard Court
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357706931948608268, guid: 75b8f4af06242214fb50aae008f42173, type: 3}
+      propertyPath: residentName
+      value: Ronnie Norton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357706931948608268, guid: 75b8f4af06242214fb50aae008f42173, type: 3}
       propertyPath: neighbors.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -6409,6 +6428,14 @@ PrefabInstance:
       propertyPath: resident
       value: 
       objectReference: {fileID: 1354917186}
+    - target: {fileID: 9210655788798102776, guid: 77d1a734873fba649b14bde7ecef694a, type: 3}
+      propertyPath: houseAddress
+      value: 66 Hellfire Way
+      objectReference: {fileID: 0}
+    - target: {fileID: 9210655788798102776, guid: 77d1a734873fba649b14bde7ecef694a, type: 3}
+      propertyPath: residentName
+      value: Elena Clarke
+      objectReference: {fileID: 0}
     - target: {fileID: 9210655788798102776, guid: 77d1a734873fba649b14bde7ecef694a, type: 3}
       propertyPath: neighbors.Array.size
       value: 1
@@ -8907,6 +8934,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1354917186}
     - target: {fileID: 8198965119256482144, guid: 5d7a9e9d039840d439ca9b0da2b24737, type: 3}
+      propertyPath: houseAddress
+      value: 67 Bloodbag Drive
+      objectReference: {fileID: 0}
+    - target: {fileID: 8198965119256482144, guid: 5d7a9e9d039840d439ca9b0da2b24737, type: 3}
+      propertyPath: residentName
+      value: Robin Waller
+      objectReference: {fileID: 0}
+    - target: {fileID: 8198965119256482144, guid: 5d7a9e9d039840d439ca9b0da2b24737, type: 3}
       propertyPath: neighbors.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -9389,6 +9424,14 @@ PrefabInstance:
       propertyPath: resident
       value: 
       objectReference: {fileID: 1354917186}
+    - target: {fileID: 8198965119256482144, guid: 5d7a9e9d039840d439ca9b0da2b24737, type: 3}
+      propertyPath: houseAddress
+      value: 12 Alucard Court
+      objectReference: {fileID: 0}
+    - target: {fileID: 8198965119256482144, guid: 5d7a9e9d039840d439ca9b0da2b24737, type: 3}
+      propertyPath: residentName
+      value: Cory Marks
+      objectReference: {fileID: 0}
     - target: {fileID: 8198965119256482144, guid: 5d7a9e9d039840d439ca9b0da2b24737, type: 3}
       propertyPath: neighbors.Array.size
       value: 1
@@ -10076,6 +10119,14 @@ PrefabInstance:
       propertyPath: resident
       value: 
       objectReference: {fileID: 1354917186}
+    - target: {fileID: 8198965119256482144, guid: 5d7a9e9d039840d439ca9b0da2b24737, type: 3}
+      propertyPath: houseAddress
+      value: 68 Hellfire Way
+      objectReference: {fileID: 0}
+    - target: {fileID: 8198965119256482144, guid: 5d7a9e9d039840d439ca9b0da2b24737, type: 3}
+      propertyPath: residentName
+      value: Frances Kidd
+      objectReference: {fileID: 0}
     - target: {fileID: 8198965119256482144, guid: 5d7a9e9d039840d439ca9b0da2b24737, type: 3}
       propertyPath: neighbors.Array.size
       value: 0

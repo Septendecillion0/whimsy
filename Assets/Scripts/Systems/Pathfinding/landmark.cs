@@ -17,6 +17,10 @@ public class Landmark : Checkpoint, IPointerClickHandler
     public float event_warning_duration = 10f;
 
     public GameObject event_progress;
+
+    public string residentName;
+    public string houseAddress;
+
     public enum LandmarkType
     {
         House,
