@@ -37,7 +37,7 @@ public class Conversation : MonoBehaviour
 
     void Start()
     {
-        document = GameObject.Find("/Scene/UICanvas/Document");
+        document = GameObject.Find("/Scene/UICanvas/PorchView/Document");
         documentAnimator = document.GetComponent<Animator>();
         // Used to fetch sequential conversations as set in Level Data for scripted version (will grab next knot in sequence)
         //ink_story.ChoosePathString(LevelManager.Instance.GetNextConversation());
@@ -160,7 +160,7 @@ public class Conversation : MonoBehaviour
             OnConversationEnd();
         }
 
-        if (tags.Contains("FAKE_WARRANT"))
+        if (tags.Contains("WARRANT"))
         {
             UIManager.Instance.DisplayDocument();
             conversation_paused = true;

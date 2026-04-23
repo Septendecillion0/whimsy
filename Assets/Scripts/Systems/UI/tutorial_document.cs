@@ -18,11 +18,11 @@ public class tutorial_document : MonoBehaviour, IPointerClickHandler
 
     private static readonly List<RaycastResult> _raycastResults = new List<RaycastResult>();
 
-    void Start()
-    {
-        uiElement = gameObject.GetComponent<RectTransform>();
-        page_list = pages.GetComponentsInChildren<GameObject>();
-    }
+    // void Start()
+    // {
+    //     uiElement = gameObject.GetComponent<RectTransform>();
+    //     page_list = pages.GetComponentsInChildren<GameObject>();
+    // }
 
     void Update()
     {
@@ -93,16 +93,16 @@ public class tutorial_document : MonoBehaviour, IPointerClickHandler
 
     public void next_page()
     {
-        page_list[current_page].SetActive(false);
-        current_page = (current_page + 1) % page_list.Length;
-        page_list[current_page].SetActive(true);
+        // page_list[current_page].SetActive(false);
+        // current_page = (current_page + 1) % page_list.Length;
+        // page_list[current_page].SetActive(true);
     }
 
     public void previous_page()
     {
-        page_list[current_page].SetActive(false);
-        current_page = (current_page - 1 + page_list.Length) % page_list.Length;
-        page_list[current_page].SetActive(true);
+        // page_list[current_page].SetActive(false);
+        // current_page = (current_page - 1 + page_list.Length) % page_list.Length;
+        // page_list[current_page].SetActive(true);
     }
 
 }

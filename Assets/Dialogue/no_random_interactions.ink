@@ -2,10 +2,10 @@ VAR delay = 3
 
 === impersonating ===
 #VIOLATION
-#WRONG_WARRANT
+#ARREST_WARRANT
 I’m looking for a suspect named Seymour Orion in this crime. #VAMPIRE
 Umm, I don’t know anybody named Seymour Orion… What did he do? #VILLAGER
-I’m going to need to search your house to find him. We have a warrant. Can I come in? #VAMPIRE #WARRANT
+I’m going to need to search your house to find him. We have a warrant. Can I come in? #VAMPIRE #DISPLAY_WARRANT
 I don't know. I still don't want you coming inside #VILLAGER
 Vampire barges into the house. #NARRATION #VAMPIRE_HUNTS
 Nice work, you reported a code violation. He showed an arrest warrant and not a search warrant. #FEEDBACK_SUCCESS
@@ -14,12 +14,12 @@ You seemed to have missed a violation. He showed an arrest warrant instead of a 
 
 === wrong_address ===
 #VIOLATION
-#ADDRESS: 1000 Bloodsucker Lane
+#WRONG_ADDRESS: 1000 Bloodsucker Lane
 Hey, open up. It's V.I.L.E. #VAMPIRE
 What? Who are you? #VILLAGER
 It doesn't matter. I have a warrant for your arrest. #VAMPIRE
 Can I see it? #VILLAGER
-Here it is. #VAMPIRE #WARRANT
+Here it is. #VAMPIRE #DISPLAY_WARRANT
 Ummm. I don't think I want to let you in. #VILLAGER
 Too bad, I've got a warrant! #VAMPIRE
 Vampire busts through the door. #VAMPIRE_HUNTS
@@ -32,7 +32,7 @@ You missed a violation: The address on the warrant was wrong. #FEEDBACK_FAIL
 #NO_SIGNATURE
 Hello? It's V.I.L.E, you've gotta let me in. #VAMPIRE
 Huh? I didn't do anything wrong. I'm not opening the door! #VILLAGER
-I've got a warrant! That means you have to let me in! #VAMPIRE #WARRANT
+I've got a warrant! That means you have to let me in! #VAMPIRE #DISPLAY_WARRANT
 No way! #VILLAGER
 Alright, well I didn't want it to come to this. #VAMPIRE
 Vampire barges in. #VAMPIRE_HUNTS
@@ -71,10 +71,10 @@ Seems you missed a violation. That vampire needed a warrant to barge in there.
 
 === wrong_date ===
 #VIOLATION
-#DATE: April 10, 2026
+#WRONG_DATE: April 10, 2026
 Hello villager. We have a warrant to come in. #VAMPIRE
 What? A search warrant? #VILLAGER
-Yes. Here it is. #WARRANT #VAMPIRE
+Yes. Here it is. #DISPLAY_WARRANT #VAMPIRE
 Um. I still don't really want you coming in. #VILLAGER
 Vampire breaks down the door and barges in.
 The vampire devours the villager. #VAMPIRE_HUNTS
@@ -125,10 +125,10 @@ I think you missed a violation. Even if they're allowed to impersonate police, V
 
 === wrong_warrant ===
 #VIOLATION
-#WRONG_WARRANT
+#ARREST_WARRANT
 Open up, it's V.I.L.E. We've got a warrant. #VAMPIRE
 V.I.L.E.? I'm not letting you in! Show me your warrant! #VILLAGER
-Here it is. #WARRANT #VAMPIRE
+Here it is. #DISPLAY_WARRANT #VAMPIRE
 Ummmm, I still don't consent to letting you in! #VILLAGER
 Too bad, our warrant lets us come in. #VAMPIRE
 Vampire barges in.
@@ -139,12 +139,12 @@ Careful. You missed a violation. That's an arrest warrant, not a search warrant.
 
 === wrong_date_no_violation ===
 #VIOLATION
-#ADDRESS: 17 Dracula Alley
+#WRONG_ADDRESS: 17 Dracula Alley
 Hey, open up. It's V.I.L.E. #VAMPIRE
 Who? #VILLAGER
 It doesn't matter. I have a warrant to search your house. #VAMPIRE
 Can I see it? #VILLAGER
-Here it is. #VAMPIRE #WARRANT
+Here it is. #VAMPIRE #DISPLAY_WARRANT
 Oh man. Okay. I suppose you can come in... #VILLAGER
 Vampire enters. 
 The villager is devoured. #VAMPIRE_HUNTS
@@ -154,12 +154,12 @@ You missed a violation. The address was wrong on that one, making it a valid war
 
 === you_won ===
 #VIOLATION
-#WRONG_WARRANT
+#ARREST_WARRANT
 Congratulations resident! You were randomly selected to win a prize. #VAMPIRE
 Huh? What did I do? #VILLAGER
 In order to claim your prize, you need to let me in. #VAMPIRE
 Wait, aren't you with V.I.L.E.? I'm not letting you in. #VILLAGER
-Don't be ridiculous, I can do anything with this warrant! #VAMPIRE #WARRANT
+Don't be ridiculous, I can do anything with this warrant! #VAMPIRE #DISPLAY_WARRANT
 Vampire pushes their way in. #NARRATION
 Villager is devoured #VAMPIRE_HUNTS
 It's good you caught that violation. That wasn't a search warrant he showed. #FEEDBACK_SUCCESS
@@ -180,10 +180,10 @@ It's awful, but there technically wasn't a violation there. It's crazy that they
 
 === no_bag ===
 #VIOLATION
-#DATE: March 30, 2026
+#WRONG_DATE: March 30, 2026
 Hello sir, I believe you may have taken someone else's bag today and I am here to look for it. #VAMPIRE
 Bag? I didn't go shopping today. What are you trying to pull? #VILLAGER
-Nothing, I'm here to search your house and I have a warrant. #VAMPIRE
+Nothing, I'm here to search your house and I have a warrant. #VAMPIRE #DISPLAY_WARRANT
 What? I don't trust you so I'm not letting you in, papers or not. #VILLAGER
 Grave mistake! I'll show you what happens when you cross V.I.L.E.! #VAMPIRE
 Vampire walks in. #NARRATION

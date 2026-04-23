@@ -140,7 +140,7 @@ public class PhoneDialogue : MonoBehaviour
     void DisplayLine(string txt)
     {
         notifications++;
-        TMP_Text notificationText = notificationBackground.GetComponentInChildren<TMP_Text>();
+        TMP_Text notificationText = notificationBanner.GetComponentInChildren<TMP_Text>();
         if (notifications == 1)
         {
             notificationText.text = notifications + " new message";

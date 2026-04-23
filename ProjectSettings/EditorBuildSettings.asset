@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/NeighborhoodMap.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 0
-    path: Assets/Scenes/LargeMap.unity
-    guid: a56b6b2d8b4ba0844933796c3ef8dcfa
-  - enabled: 0
     path: Assets/Scenes/Levels/Day_1.unity
     guid: 8cafa54427eafc845bd73cef2446fa5d
   - enabled: 0

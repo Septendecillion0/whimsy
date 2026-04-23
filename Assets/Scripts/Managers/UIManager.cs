@@ -38,7 +38,7 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        Document = GameObject.Find("/Scene/UICanvas/Document");
+        Document = GameObject.Find("/Scene/UICanvas/PorchView/Document");
         documentAnimator = Document.GetComponent<Animator>();
     }
 
