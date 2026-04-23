@@ -44,10 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b156c997d4e043fc8ce49e7e34b660a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhoneDialogue
-  inkAsset: {fileID: 4900000, guid: 35f49168171c545ac9b032d1c268012e, type: 3}
+  phone_screen_script: {fileID: 0}
+  inkAsset: {fileID: 4900000, guid: 082d73da3325842d1aa97a7509715caf, type: 3}
   line: {fileID: 0}
   buttonPrefab: {fileID: 5190485537709982499, guid: 9ba5a3e0730d5457fa9e275e9da1250a, type: 3}
   dialogueOn: 0
   choicesContainer: {fileID: 0}
   textContainer: {fileID: 0}
   textItemPrefab: {fileID: 8503829275581374595, guid: 2cb14f6a5348148f38cecde6ace8e6ee, type: 3}
+  notifications: 0
+  notificationBanner: {fileID: 0}
+  notificationBackground: {fileID: 0}

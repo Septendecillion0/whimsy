@@ -8883,10 +8883,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 838033439}
     - target: {fileID: 2245314690213944878, guid: 7cf0644b07eeb2f4f98b7ec053df935b, type: 3}
-      propertyPath: inkAsset
-      value: 
-      objectReference: {fileID: 4900000, guid: 082d73da3325842d1aa97a7509715caf, type: 3}
-    - target: {fileID: 2245314690213944878, guid: 7cf0644b07eeb2f4f98b7ec053df935b, type: 3}
       propertyPath: textContainer
       value: 
       objectReference: {fileID: 949882299}
