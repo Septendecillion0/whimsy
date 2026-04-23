@@ -50,8 +50,11 @@ public class LevelManager : MonoBehaviour
     {
         if (isLoading) return;
 
-        //TOD
+        // For Sequential Levels
         StartCoroutine(LoadScene(currentLevelIndex + 1));
+
+        // For single randomized level
+        //RestartDay();
     }
 
     /// <summary>
@@ -89,8 +92,9 @@ public class LevelManager : MonoBehaviour
     // Used to fetch sequential conversations as set in Level Data for scripted version (will grab next knot in sequence)
     public string GetNextConversation()
     {
-        return levelData.level_conversations[conversation_count];
+        var nextConversation = levelData.level_conversations[conversation_count];
         conversation_count++;
+        return nextConversation;
     }
 
     // Used to fetch random conversations for non-scripted version (will grab random knot from Level Data)

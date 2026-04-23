@@ -17,7 +17,7 @@ public class PhoneDialogue : MonoBehaviour
     public Transform textContainer;
     public GameObject textItemPrefab;
 
-    public int notifications;
+    public int notifications = 0;
     public GameObject notificationBanner;
     public GameObject notificationBackground;
 
@@ -44,7 +44,7 @@ public class PhoneDialogue : MonoBehaviour
     // {
     //     StartDialogue();
     // }
-    
+
     void LoadDialogues()
     {
         story = new Story(inkAsset.text);
@@ -139,7 +139,7 @@ public class PhoneDialogue : MonoBehaviour
 
     void DisplayLine(string txt)
     {
-        notifications ++;
+        notifications++;
         TMP_Text notificationText = notificationBackground.GetComponentInChildren<TMP_Text>();
         if (notifications == 1)
         {

@@ -11,15 +11,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/LargeMap.unity
     guid: a56b6b2d8b4ba0844933796c3ef8dcfa
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/Day_1.unity
     guid: 8cafa54427eafc845bd73cef2446fa5d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/Day_2.unity
     guid: 80e7337d78fdd9d45b094746974bfa28
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/Day_3.unity
     guid: e59340e0e1d88a14487434987c150dc2
+  - enabled: 1
+    path: Assets/Scenes/Levels/LargeMap.unity
+    guid: 470d55be1046068478b8b971293105f8
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 65ceb4513f7719a4f90bfb70e14035af, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
