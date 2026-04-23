@@ -69,11 +69,13 @@ public class UIManager : MonoBehaviour
     public void DisplayDocument()
     {
         documentAnimator.SetTrigger("DocumentDisplayed");
+        PorchSceneUI.transform.Find("ReturnButton").GetComponent<Button>().interactable = false;
     }
 
     public void CloseDocument()
     {
         documentAnimator.SetTrigger("DocumentClosed");
+        PorchSceneUI.transform.Find("ReturnButton").GetComponent<Button>().interactable = true;
         ConversationManager.Instance.selected_conversation.conversation_paused = false;
     }
 

@@ -146,6 +146,8 @@ MonoBehaviour:
   vampire: {fileID: 0}
   event_warning_duration: 120
   event_progress: {fileID: 6725033754398034030}
+  residentName: their name!
+  houseAddress: their addy
 --- !u!61 &6431565082735033417
 BoxCollider2D:
   m_ObjectHideFlags: 0

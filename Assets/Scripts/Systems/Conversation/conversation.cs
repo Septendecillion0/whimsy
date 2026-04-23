@@ -19,6 +19,9 @@ public class Conversation : MonoBehaviour
     bool delay_cooldown = false;
     public string next_line = "";
 
+    private string feedback_success_line = "";
+    private string feedback_failure_line = "";
+
 
     public List<string> vampire_history = new List<string>();
     public List<string> villager_history = new List<string>();
@@ -105,6 +108,20 @@ public class Conversation : MonoBehaviour
         conversation_ended = true;
         UpdateScore();
         DayCycleManager.Instance.OnEncounterCompleted();
+
+
+        Debug.Log("Vampire Violation:" + vampire.violation);
+        Debug.Log("Vampire Reported:" + vampire.reported);
+        if ((vampire.violation && vampire.reported) || (!vampire.violation && !vampire.reported))
+        {
+            sendLineToPhone(feedback_success_line);
+        }
+        else
+        {
+            sendLineToPhone(feedback_failure_line);
+        }
+
+
         SendVampireAway();
     }
 
@@ -124,6 +141,37 @@ public class Conversation : MonoBehaviour
         }
 
         List<string> tags = ink_story.currentTags;
+
+        if (tags.Contains("VIOLATION"))
+        {
+            if (!vampire.violation)
+            {
+                Debug.Log("Vampire Violation Set to True");
+                vampire.violation = true;
+            }
+        }
+
+        if (tags.Contains("FEEDBACK_SUCCESS"))
+        {
+            print("FEEDBACK_SUCCESS Detected");
+            feedback_success_line = next_line;
+            next_line = ink_story.Continue();
+            tags = ink_story.currentTags;
+        }
+        if (tags.Contains("FEEDBACK_FAIL"))
+        {
+            print("FEEDBACK_FAIL Detected");
+            feedback_failure_line = next_line;
+            next_line = ink_story.Continue();
+            tags = ink_story.currentTags;
+        }
+
+
+
+
+
+
+
         if (tags.Contains("VAMPIRE"))
         {
             vampire_history.Add(next_line);
@@ -138,14 +186,7 @@ public class Conversation : MonoBehaviour
         }
 
 
-        if (tags.Contains("VIOLATION"))
-        {
-            if (!vampire.violation)
-            {
-                vampire.violation = true;
-            }
 
-        }
 
         if (tags.Contains("VAMPIRE_HUNTS"))
         {
@@ -160,11 +201,32 @@ public class Conversation : MonoBehaviour
             OnConversationEnd();
         }
 
+
+
         if (tags.Contains("DISPLAY_WARRANT"))
         {
+            UIManager.Instance.Document.GetComponent<Document>().SetSearchWarrant();
+            if (tags.Contains("ARREST_WARRANT"))
+            {
+                UIManager.Instance.Document.GetComponent<Document>().SetArrestWarrant();
+            }
+            if (tags.Contains("WRONG_ADDRESS"))
+            {
+                UIManager.Instance.Document.GetComponent<Document>().SetWarrantAddress("413 Garlic Ct");
+            }
+            if (tags.Contains("WRONG_DATE"))
+            {
+                UIManager.Instance.Document.GetComponent<Document>().SetWarrantDate("April 10, 2026");
+            }
+            if (tags.Contains("NO_SIGNATURE"))
+            {
+                UIManager.Instance.Document.GetComponent<Document>().SetWarrantSignature(" ");
+            }
             UIManager.Instance.DisplayDocument();
             conversation_paused = true;
         }
+
+
 
 
     }
@@ -202,6 +264,11 @@ public class Conversation : MonoBehaviour
             conversation_ended = true;
         }
 
+    }
+
+    void sendLineToPhone(string line)
+    {
+        PhoneDialogue.Instance.GetComponent<PhoneDialogue>().DisplayLine(line);
     }
 
     IEnumerator DialogueDelay(float delay)

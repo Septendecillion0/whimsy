@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 public class PhoneDialogue : MonoBehaviour
 {
+    public static PhoneDialogue Instance;
     public phone_screen phone_screen_script;
     public TextAsset inkAsset;
     public TMP_Text line;
@@ -32,7 +33,17 @@ public class PhoneDialogue : MonoBehaviour
 
     void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject); // Prevent duplicate managers
+        }
+
         LoadDialogues();
+
     }
 
     void Start()
@@ -52,7 +63,7 @@ public class PhoneDialogue : MonoBehaviour
 
     public void StartDialogue()
     {
-        Debug.Log("dialogue started");
+        //Debug.Log("dialogue started");
         story.ChoosePathString("start");
         StartCoroutine(ContinueDialogue());
 
@@ -63,7 +74,7 @@ public class PhoneDialogue : MonoBehaviour
         RemoveChoices();
         if (story.canContinue || story.currentChoices.Count > 0)
         {
-            Debug.Log("continuing story");
+            //Debug.Log("continuing story");
             bool lineDisplayed = false;
             story.Continue();
 
@@ -89,14 +100,14 @@ public class PhoneDialogue : MonoBehaviour
 
             if (dialogueState == WAIT_CHOICE)
             {
-                Debug.Log("displaying choices");
+                //Debug.Log("displaying choices");
                 DisplayChoices();
             }
         }
 
         else if (dialogueState == WAIT_CHOICE)
         {
-            Debug.Log("displaying choices");
+            //Debug.Log("displaying choices");
             DisplayChoices();
         }
 
@@ -110,9 +121,9 @@ public class PhoneDialogue : MonoBehaviour
     IEnumerator EndDialogue()
     {
         dialogueOn = false;
-        Debug.Log("Dialogue has ended");
+        //Debug.Log("Dialogue has ended");
         yield return new WaitForSeconds(1f);
-        Debug.Log("entering end screen");
+        //Debug.Log("entering end screen");
         StartCoroutine(Deactivate("EndText", false));
         StartCoroutine(Activate("EndScreen"));
 
@@ -137,7 +148,7 @@ public class PhoneDialogue : MonoBehaviour
     // }
 
 
-    void DisplayLine(string txt)
+    public void DisplayLine(string txt)
     {
         notifications++;
         TMP_Text notificationText = notificationBanner.GetComponentInChildren<TMP_Text>();
@@ -149,7 +160,7 @@ public class PhoneDialogue : MonoBehaviour
         {
             notificationText.text = notifications + " new messages";
         }
-        Debug.Log("displaying line");
+        //Debug.Log("displaying line");
         txt = txt.Trim();
 
         // line.text += "\n" + txt;
@@ -224,7 +235,7 @@ public class PhoneDialogue : MonoBehaviour
         // set notifs back to zero after phone is opened and remove notification banner
         if (phone_screen_script.is_open == true)
         {
-            Debug.Log("reset notifications");
+            //Debug.Log("reset notifications");
             notificationBackground.SetActive(false);
             notifications = 0;
         }
