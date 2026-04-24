@@ -21,6 +21,8 @@ public class PhoneDialogue : MonoBehaviour
     public int notifications = 0;
     public GameObject notificationBanner;
     public GameObject notificationBackground;
+    public GameObject reportingBanner;
+    public GameObject recordingBanner;
 
     private int dialogueState = 0;
     private int DIALOGUE_OFF = 0;
@@ -147,6 +149,37 @@ public class PhoneDialogue : MonoBehaviour
     //     StartCoroutine(ContinueDialogue());
     // }
 
+    public void DisplayRecordingMessage()
+    {
+        recordingBanner.SetActive(true);
+        StartCoroutine(FadeOut(recordingBanner, 3f));
+    }
+
+    public void DisplayReportingMessage()
+    {
+        reportingBanner.SetActive(true);
+        StartCoroutine(FadeOut(reportingBanner, 3f));
+    }
+
+    private IEnumerator FadeOut(GameObject banner, float duration)
+    {
+        CanvasGroup canvasGroup = banner.GetComponent<CanvasGroup>();
+        float startAlpha = 1f;
+        float time = 0;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            // Interpolate alpha from 1 to 0 over the duration
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, 0, time / duration);
+            yield return null;
+        }
+
+        canvasGroup.alpha = 0; // Ensure it's fully transparent
+        //Debug.Log("Message Over");
+        banner.SetActive(false);
+        canvasGroup.alpha = 1;
+    }
 
     public void DisplayLine(string txt)
     {
@@ -265,7 +298,7 @@ public class PhoneDialogue : MonoBehaviour
 
         if (story.canContinue && dialogueState != DIALOGUE_OFF && dialogueState != CHOICE_DISPLAYED && dialogueState != WAIT_CHOICE)
         {
-            Debug.Log("update call");
+            //Debug.Log("update call");
             StartCoroutine(ContinueDialogue());
         }
 

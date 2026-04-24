@@ -153,14 +153,12 @@ public class Conversation : MonoBehaviour
 
         if (tags.Contains("FEEDBACK_SUCCESS"))
         {
-            print("FEEDBACK_SUCCESS Detected");
             feedback_success_line = next_line;
             next_line = ink_story.Continue();
             tags = ink_story.currentTags;
         }
         if (tags.Contains("FEEDBACK_FAIL"))
         {
-            print("FEEDBACK_FAIL Detected");
             feedback_failure_line = next_line;
             next_line = ink_story.Continue();
             tags = ink_story.currentTags;
