@@ -8,6 +8,7 @@ public class DayCycleManager : MonoBehaviour
 
     [SerializeField] public TextMeshProUGUI timeDisplay;
     public float remainingTime = 90f;
+    private bool timer_started = false;
     private bool day_ended = false;
 
     public static DayCycleManager Instance;
@@ -26,7 +27,7 @@ public class DayCycleManager : MonoBehaviour
 
     void Update()
     {
-        if (!day_ended)
+        if (!day_ended && timer_started)
         {
             if (remainingTime > 0)
             {
@@ -44,9 +45,12 @@ public class DayCycleManager : MonoBehaviour
             timeDisplay.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
 
+    }
 
 
-
+    public void StartTimer()
+    {
+        timer_started = true;
     }
 
     public void OnEncounterCompleted()

@@ -67,6 +67,12 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(LoadScene(currentLevelIndex));
     }
 
+    public void RestartGame()
+    {
+        if (isLoading) return;
+        StartCoroutine(LoadScene(0));
+    }
+
     /// <summary>
     /// Loads the scene given by index
     /// </summary>
