@@ -220,11 +220,16 @@ public class Conversation : MonoBehaviour
             {
                 UIManager.Instance.Document.GetComponent<Document>().SetWarrantSignature(" ");
             }
-            if (PhoneDialogue.Instance.phone_screen_script.is_open && ConversationManager.Instance.selected_conversation == this)
+            print("Is scene open: " + UIManager.Instance.PorchSceneUI.activeInHierarchy);
+            print("Landmark: " + landmark.name);
+            print("Current Convo landmark: " + ConversationManager.Instance.selected_conversation.landmark.name);
+            if (UIManager.Instance.PorchSceneUI.activeInHierarchy && ConversationManager.Instance.selected_conversation.landmark == landmark)
             {
+                print("Should be displaying document");
                 UIManager.Instance.DisplayDocument();
+                conversation_paused = true;
             }
-            conversation_paused = true;
+
         }
 
 
