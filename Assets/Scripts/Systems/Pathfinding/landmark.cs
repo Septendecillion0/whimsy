@@ -85,8 +85,8 @@ public class Landmark : Checkpoint, IPointerClickHandler
         transform.Find("EventWarningSign").gameObject.SetActive(false);
         GameStateManager.Instance.SetState(GameStateManager.GameState.Dialogue);
         ConversationManager.Instance.SetSelectedConversation(conversation);
-        // PorchSceneUI.Instance.houseLabelText.text = "Resident: " + residentName + "\n" + "Address: " + houseAddress;
         UIManager.Instance.ShowPorchScene();
+        PorchSceneUI.Instance.houseLabelText.text = "Resident: " + residentName + "\n" + "Address: " + houseAddress;
     }
 
     IEnumerator UpdateProgressIcon()
