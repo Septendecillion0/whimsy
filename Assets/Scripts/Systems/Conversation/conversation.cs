@@ -220,7 +220,7 @@ public class Conversation : MonoBehaviour
             {
                 UIManager.Instance.Document.GetComponent<Document>().SetWarrantSignature(" ");
             }
-            if (PhoneScreen.Instance.is_open && ConversationManager.Instance.selected_conversation == this)
+            if (PhoneDialogue.Instance.phone_screen_script.is_open && ConversationManager.Instance.selected_conversation == this)
             {
                 UIManager.Instance.DisplayDocument();
             }
