@@ -6,6 +6,7 @@ public class PorchSceneUI : MonoBehaviour
 {
     public static PorchSceneUI Instance;
     private Conversation current_conversation;
+    public TextMeshProUGUI houseLabelText;
 
     void Awake()
     {
