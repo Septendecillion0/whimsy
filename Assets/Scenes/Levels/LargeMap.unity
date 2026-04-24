@@ -13961,7 +13961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8788514196310229305, guid: cac235fd8d019464498e162ccffe1ab6, type: 3}
       propertyPath: spawnInterval
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8788514196310229305, guid: cac235fd8d019464498e162ccffe1ab6, type: 3}
       propertyPath: total_daily_encounters

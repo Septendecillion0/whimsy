@@ -41,7 +41,7 @@ public class PorchSceneUI : MonoBehaviour
             transform.Find("VampireSprite").gameObject.SetActive(true);
             transform.Find("VampireSprite").GetComponent<Image>().sprite = current_conversation.vampire.GetComponent<SpriteRenderer>().sprite;
             //transform.Find("VampireSprite").GetComponent<Image>().color = current_conversation.vampire.GetComponent<SpriteRenderer>().color;
-            transform.Find("VampireSprite").transform.Find("Hat").GetComponent<Image>().color = current_conversation.vampire.gameObject.transform.Find("Hat").GetComponent<SpriteRenderer>().color;
+            //transform.Find("VampireSprite").transform.Find("Hat").GetComponent<Image>().color = current_conversation.vampire.gameObject.transform.Find("Hat").GetComponent<SpriteRenderer>().color;
         }
         else
         {

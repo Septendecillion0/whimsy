@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2595828245607838100
 Transform:
   m_ObjectHideFlags: 0
@@ -314,6 +314,12 @@ MonoBehaviour:
   somethingAttempted: 0
   speed: 3
   violation: 0
+  spriteList:
+  - {fileID: 8237338679300467516, guid: be3cacb1ee4e9db4e8de9ce953c0495f, type: 3}
+  - {fileID: 2685571543873184552, guid: 30213b36444a3c24e8626a08e6c8d8a1, type: 3}
+  hatSpriteList:
+  - {fileID: -6146762717432359839, guid: d1a5c1c93f8090e428759244fee5d28f, type: 3}
+  - {fileID: 2913899313751633820, guid: 00675e63590b9c7488da4deeef39d614, type: 3}
 --- !u!60 &153657543639345448
 PolygonCollider2D:
   m_ObjectHideFlags: 0

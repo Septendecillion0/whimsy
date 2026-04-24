@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 /// <summary>
 /// List of attributes unique to each vampire instance
 /// </summary>
@@ -11,8 +12,24 @@ public class VampireAttributes : MonoBehaviour
     public float speed = 3f;
     public bool violation = false;
 
+    [SerializeField] public List<Sprite> spriteList;
+    //[SerializeField] public List<Sprite> hatSpriteList;
+
     void Start()
     {
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        //SpriteRenderer hatSpriteRenderer = GameObject.Find("Hat").GetComponent<SpriteRenderer>();
+
+        int randomIndex = Random.Range(0, spriteList.Count);
+
+        spriteRenderer.sprite = spriteList[randomIndex];
+
+        //hatSpriteRenderer.sprite = hatSpriteList[randomIndex];
+        // if (randomIndex == 1)
+        // {
+        //     gameObject.transform.Find("Hat").position = new Vector2(-1.51f, 3.27f);
+        // }
+
         somethingAttempted = false;
     }
 

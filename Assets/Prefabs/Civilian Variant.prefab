@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 153657543639345448, guid: 7f69a7d5631338a4da94cc8f5334e603, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 5.41
+      value: 6.47
       objectReference: {fileID: 0}
     - target: {fileID: 153657543639345448, guid: 7f69a7d5631338a4da94cc8f5334e603, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 7.88
+      value: 7.25
       objectReference: {fileID: 0}
     - target: {fileID: 1462522432570561770, guid: 7f69a7d5631338a4da94cc8f5334e603, type: 3}
       propertyPath: m_Name
@@ -27,7 +27,7 @@ PrefabInstance:
     - target: {fileID: 3374799675915480216, guid: 7f69a7d5631338a4da94cc8f5334e603, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -803138403708184043, guid: 9559a7d22edac644f943f14675cf221f, type: 3}
+      objectReference: {fileID: 9004570984890446612, guid: 336793f314ab41f4c803d6bf6ab37993, type: 3}
     - target: {fileID: 3374799675915480216, guid: 7f69a7d5631338a4da94cc8f5334e603, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -96,6 +96,18 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5683198329147613685, guid: 7f69a7d5631338a4da94cc8f5334e603, type: 3}
+      propertyPath: spriteList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683198329147613685, guid: 7f69a7d5631338a4da94cc8f5334e603, type: 3}
+      propertyPath: 'spriteList.Array.data[0]'
+      value: 
+      objectReference: {fileID: -803138403708184043, guid: 9559a7d22edac644f943f14675cf221f, type: 3}
+    - target: {fileID: 5683198329147613685, guid: 7f69a7d5631338a4da94cc8f5334e603, type: 3}
+      propertyPath: 'spriteList.Array.data[1]'
+      value: 
+      objectReference: {fileID: 9004570984890446612, guid: 336793f314ab41f4c803d6bf6ab37993, type: 3}
     - target: {fileID: 5816960428583221075, guid: 7f69a7d5631338a4da94cc8f5334e603, type: 3}
       propertyPath: m_Enabled
       value: 1

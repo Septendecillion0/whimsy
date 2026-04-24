@@ -220,7 +220,10 @@ public class Conversation : MonoBehaviour
             {
                 UIManager.Instance.Document.GetComponent<Document>().SetWarrantSignature(" ");
             }
-            UIManager.Instance.DisplayDocument();
+            if (PhoneScreen.Instance.is_open && ConversationManager.Instance.selected_conversation == this)
+            {
+                UIManager.Instance.DisplayDocument();
+            }
             conversation_paused = true;
         }
 
