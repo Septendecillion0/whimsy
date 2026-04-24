@@ -18,7 +18,7 @@ public class CameraControls : MonoBehaviour
 
     public float minX = -20f;
     public float maxX = 20f;
-    public float minY = -20f;
+    public float minY = -5f;
     public float maxY = 20f;
 
     private void Awake()
