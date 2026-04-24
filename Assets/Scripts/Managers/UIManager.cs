@@ -42,6 +42,8 @@ public class UIManager : MonoBehaviour
     {
         Document = GameObject.Find("/Scene/UICanvas/PorchView/Document");
         documentAnimator = Document.GetComponent<Animator>();
+
+        PrologueScreen.SetActive(true);
     }
 
 
@@ -111,19 +113,22 @@ public class UIManager : MonoBehaviour
 
     public void SendMessage(string message, Color? color = null)
     {
-        message_queue.Add(message);
-        message_colors.Add(color ?? Color.gray);
+        //Dev Tool to show message
+        // message_queue.Add(message);
+        // message_colors.Add(color ?? Color.gray);
+        return;
     }
 
     public void DisplayMessage(string message, Color color)
     {
-        if (MessagePanel.GetComponent<CanvasGroup>() != null)
-        {
-            MessagePanel.SetActive(true);
-            MessagePanel.GetComponent<Image>().color = message_colors[0];
-            MessagePanel.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = message;
-            StartCoroutine(FadeOut(3f));
-        }
+        // if (MessagePanel.GetComponent<CanvasGroup>() != null)
+        // {
+        //     MessagePanel.SetActive(true);
+        //     MessagePanel.GetComponent<Image>().color = message_colors[0];
+        //     MessagePanel.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = message;
+        //     StartCoroutine(FadeOut(3f));
+        // }
+        return;
     }
 
     private IEnumerator FadeOut(float duration)
