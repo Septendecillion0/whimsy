@@ -35,7 +35,7 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject); // Prevent duplicate managers
+            Destroy(Instance.gameObject); // Prevent duplicate managers
         }
 
         DontDestroyOnLoad(gameObject);
@@ -106,6 +106,8 @@ public class LevelManager : MonoBehaviour
     // Used to fetch random conversations for non-scripted version (will grab random knot from Level Data)
     public string GetRandomConversation()
     {
+        Debug.Log("Getting random conversation");
+        Debug.Log(levelData.level_conversations.Length);
         return levelData.level_conversations[Random.Range(0, levelData.level_conversations.Length - 1)];
     }
 

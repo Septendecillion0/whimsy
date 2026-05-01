@@ -20,6 +20,8 @@ public class Document : MonoBehaviour
 
     public void SetSearchWarrant()
     {
+        if (ConversationManager.Instance.selected_conversation.landmark.residentName == null) return;
+
         searchWarrant.SetActive(true);
         SetWarrantName(ConversationManager.Instance.selected_conversation.landmark.residentName);
         SetWarrantDate("April 24, 2026");

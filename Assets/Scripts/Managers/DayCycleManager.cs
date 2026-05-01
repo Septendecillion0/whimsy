@@ -12,7 +12,7 @@ public class DayCycleManager : MonoBehaviour
     private bool day_ended = false;
 
     public static DayCycleManager Instance;
-    private int total_daily_encounters = 0;
+    //private int total_daily_encounters = 0;
     public float spawnInterval = 10f;
     private int encounters_started = 0;
     private int encounters_completed = 0;
@@ -21,7 +21,7 @@ public class DayCycleManager : MonoBehaviour
 
     void Start()
     {
-        total_daily_encounters = LevelManager.Instance.levelData.level_conversations.Length;
+        //total_daily_encounters = LevelManager.Instance.levelData.level_conversations.Length;
         StartCoroutine(SpawnEncounterLoop());
     }
 
@@ -56,10 +56,10 @@ public class DayCycleManager : MonoBehaviour
     public void OnEncounterCompleted()
     {
         encounters_completed++;
-        if (encounters_completed == total_daily_encounters)
-        {
-            StartCoroutine(EndDay());
-        }
+        // if (encounters_completed == total_daily_encounters)
+        // {
+        //     StartCoroutine(EndDay());
+        // }
     }
 
     void Awake()
@@ -76,7 +76,7 @@ public class DayCycleManager : MonoBehaviour
 
     IEnumerator SpawnEncounterLoop()
     {
-        while (encounters_started < total_daily_encounters && GameStateManager.Instance.currentState != GameStateManager.GameState.EndOfDay)
+        while (/*encounters_started < total_daily_encounters && */ GameStateManager.Instance.currentState != GameStateManager.GameState.EndOfDay)
         {
             yield return new WaitForSeconds(spawnInterval);
             SpawnManager.Instance.SpawnEnemy();

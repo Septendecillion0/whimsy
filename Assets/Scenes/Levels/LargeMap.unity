@@ -1379,7 +1379,7 @@ MonoBehaviour:
 
     You
     are a part of the Neighborhood Watch, tasked with recording and reporting instances
-    of V.A.M.P.I.R.E members at work. Identify violation of the code, but also record
+    of V.I.L.E. members at work. Identify violation of the code, but also record
     EVERYTHING to learn about the ruses they use to harm your community.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dbe264461646e9c4b8202788bddb8543, type: 2}
@@ -3263,7 +3263,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.4477, y: 0.56067, z: -10}
+  m_LocalPosition: {x: -1.4477, y: -0.93, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
